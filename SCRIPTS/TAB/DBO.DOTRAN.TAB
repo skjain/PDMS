@@ -1,0 +1,42 @@
+CREATE TABLE [dbo].[DOTRAN] (
+	[COMP] [char] (4) NOT NULL ,
+	[VTYP] [char] (3) NOT NULL ,
+	[SRNO] [char] (13) NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[TXRT] [varchar] (50) NULL ,
+	[DONO] [char] (12) NOT NULL ,
+	[DODT] [datetime] NOT NULL ,
+	[PCOD] [char] (6) NOT NULL ,
+	[DCOD] [char] (6) NOT NULL ,
+	[BRCD] [char] (6) NOT NULL ,
+	[SCOD] [char] (6) NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[PKTP] [char] (6) NULL ,
+	[LTNO] [char] (10) NULL ,
+	[GRAD] [char] (15) NULL ,
+	[QNTY] [decimal](18, 3) NOT NULL ,
+	[GWGT] [decimal](18, 3) NOT NULL ,
+	[RATE] [decimal](18, 3) NOT NULL ,
+	[ARAT] [decimal](18, 3) NOT NULL ,
+	[BRMK] [varchar] (250) NULL ,
+	[PRDL] [char] (1) NOT NULL ,
+	[DFLG] [char] (1) NOT NULL ,
+	[ORDN] [char] (10) NOT NULL ,
+	[OSRC] [char] (2) NOT NULL ,
+	[CHLN] [char] (10) NULL ,
+	[VBNO] [char] (10) NULL ,
+	[RECSTAT] [char] (1) NOT NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[DOTRAN] WITH NOCHECK ADD 
+	CONSTRAINT [DF_DOTRAN_QNTY] DEFAULT (0) FOR [QNTY],
+	CONSTRAINT [DF_DOTRAN_GWGT] DEFAULT (0) FOR [GWGT],
+	CONSTRAINT [DF_DOTRAN_RATE] DEFAULT (0) FOR [RATE],
+	CONSTRAINT [DF_DOTRAN_RATE1] DEFAULT (0) FOR [ARAT],
+	CONSTRAINT [DF_DOTRAN_PRDL] DEFAULT ('N') FOR [PRDL],
+	CONSTRAINT [DF_DOTRAN_DOFL] DEFAULT ('N') FOR [DFLG],
+	CONSTRAINT [DF_DOTRAN_RECSTAT] DEFAULT ('A') FOR [RECSTAT]
+
+

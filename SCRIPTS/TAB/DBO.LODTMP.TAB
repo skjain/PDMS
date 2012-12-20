@@ -1,0 +1,14 @@
+CREATE TABLE [dbo].[LODTMP] (
+	[HOST] [varchar] (50) NULL ,
+	[PCOD] [char] (6) NULL ,
+	[VBNO] [char] (10) NULL ,
+	[DATE] [datetime] NULL ,
+	[BOX1] [varchar] (20) NULL ,
+	[BOX2] [varchar] (20) NULL ,
+	[BOX3] [varchar] (20) NULL ,
+	[BOX4] [varchar] (20) NULL ,
+	[COMP] [char] (4) NULL ,
+	[LTNO] [char] (10) NULL ,
+	[PCES] [decimal](18, 0) NOT NULL ,
+	[QNTY] [decimal](18, 4) NOT NULL 
+) ON [PRIMARY]

@@ -1,0 +1,22 @@
+CREATE TABLE [dbo].[RPT_ITMLEDGR] (
+	[COMP] [char] (4) NOT NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[IGCD] [char] (6) NULL ,
+	[SCOD] [char] (3) NULL ,
+	[BINCD] [varchar] (25) NULL ,
+	[OP_QTY] [decimal](18, 3) NULL ,
+	[OP_RATE] [decimal](18, 3) NULL ,
+	[OP_AMT] [decimal](18, 3) NULL ,
+	[REC_QTY] [decimal](18, 3) NULL ,
+	[REC_RATE] [decimal](18, 3) NULL ,
+	[REC_AMT] [decimal](18, 3) NULL ,
+	[ISU_QTY] [decimal](18, 3) NULL ,
+	[ISU_RATE] [decimal](18, 3) NULL ,
+	[ISU_AMT] [decimal](18, 3) NULL ,
+	[RTN_QTY] [decimal](18, 3) NULL ,
+	[RTN_RATE] [decimal](18, 3) NULL ,
+	[RTN_AMT] [decimal](18, 3) NULL ,
+	[CLS_QTY] [decimal](18, 3) NULL ,
+	[CLS_RATE] [decimal](18, 3) NULL ,
+	[CLS_AMT] [decimal](18, 3) NULL 
+) ON [PRIMARY]

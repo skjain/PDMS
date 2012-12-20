@@ -1,0 +1,19 @@
+CREATE TABLE [dbo].[GATEPASS] (
+	[COMP] [char] (4) NOT NULL ,
+	[CODE] [varchar] (12) NOT NULL ,
+	[GPNO] [char] (12) NOT NULL ,
+	[GPDATE] [datetime] NULL ,
+	[VEHNO] [varchar] (15) NULL ,
+	[BNET] [numeric](18, 2) NOT NULL ,
+	[VCOD] [varchar] (6) NOT NULL ,
+	[REMARK] [varchar] (100) NULL ,
+	[USERCODE] [varchar] (25) NULL ,
+	[RaiseBy] [varchar] (25) NULL ,
+	[GPTYPE] [char] (1) NULL ,
+	CONSTRAINT [PK_GatePass_Mst] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[CODE],
+		[GPNO]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

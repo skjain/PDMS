@@ -1,0 +1,22 @@
+CREATE TABLE [dbo].[VHCLENTRY] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[CODE] [char] (6) NOT NULL ,
+	[DATE] [datetime] NOT NULL ,
+	[VHCD] [char] (6) NULL ,
+	[TRCD] [char] (6) NULL ,
+	[INTIME] [char] (5) NULL ,
+	[DRIVER] [char] (50) NULL ,
+	[LICENCE] [char] (50) NULL ,
+	[REMARKS] [char] (150) NULL ,
+	[OPERATOR] [char] (40) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[VHCLENTRY] WITH NOCHECK ADD 
+	CONSTRAINT [PK_VHCLENTRY] PRIMARY KEY  CLUSTERED 
+	(
+		[CODE]
+	)  ON [PRIMARY] 
+
+

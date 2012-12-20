@@ -1,0 +1,15 @@
+CREATE TABLE [dbo].[SALRATEMASTER] (
+	[COMP] [char] (4) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[UNIT] [char] (6) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[ICOD] [char] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[GRAD] [char] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[RATE] [decimal](18, 4) NOT NULL ,
+	[STDT] [datetime] NULL ,
+	[ENDT] [datetime] NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[SALRATEMASTER] WITH NOCHECK ADD 
+	CONSTRAINT [DF_SALRATEMASTER_RATE] DEFAULT (0) FOR [RATE]
+
+

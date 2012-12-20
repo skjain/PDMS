@@ -1,0 +1,32 @@
+CREATE TABLE [dbo].[ENQ_MST] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[ENQNO] [char] (12) NOT NULL ,
+	[ENQDATE] [datetime] NOT NULL ,
+	[SRCH] [smallint] NOT NULL ,
+	[PCOD] [char] (6) NOT NULL ,
+	[ENQCLDATE] [datetime] NOT NULL ,
+	[ENQSTAT] [char] (1) NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[QTY] [decimal](18, 3) NOT NULL ,
+	[PCS] [decimal](18, 3) NOT NULL ,
+	[INDNO] [char] (12) NOT NULL ,
+	[REMARKS] [varchar] (255) NULL ,
+	[ITMRMRK] [varchar] (255) NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[USER] [char] (25) NOT NULL ,
+	[SYSR] [char] (1) NOT NULL ,
+	[EXTRA1] [char] (50) NULL ,
+	[EXTRA2] [char] (50) NULL ,
+	[EXTRA3] [char] (50) NULL ,
+	[EXTRA4] [char] (50) NULL ,
+	[EXTRA5] [char] (50) NULL ,
+	[GRADE] [numeric](18, 0) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[ENQ_MST] ADD 
+	CONSTRAINT [DF_ENQ_MST_QTY] DEFAULT (0) FOR [QTY],
+	CONSTRAINT [DF_ENQ_MST_PCS] DEFAULT (0) FOR [PCS],
+	CONSTRAINT [DF_ENQ_MST_RECSTAT] DEFAULT ('A') FOR [RECSTAT],
+	CONSTRAINT [DF_ENQ_MST_SYSR] DEFAULT ('N') FOR [SYSR]

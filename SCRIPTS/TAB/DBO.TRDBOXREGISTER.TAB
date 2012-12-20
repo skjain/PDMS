@@ -1,0 +1,38 @@
+CREATE TABLE [dbo].[TRDBOXREGISTER] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[DBCD] [char] (6) NOT NULL ,
+	[GRNNO] [char] (10) NOT NULL ,
+	[VTYP] [char] (6) NOT NULL ,
+	[VBNO] [char] (20) NULL ,
+	[VBDT] [datetime] NOT NULL ,
+	[PCOD] [char] (6) NULL ,
+	[LOTNO] [char] (20) NULL ,
+	[ICOD] [char] (10) NULL ,
+	[GRAD] [char] (9) NULL ,
+	[GRSWGT] [decimal](18, 3) NOT NULL ,
+	[TRWGT] [decimal](18, 3) NOT NULL ,
+	[NTWGT] [decimal](18, 3) NOT NULL ,
+	[DSPWGT] [decimal](18, 3) NOT NULL ,
+	[RVBNO] [char] (20) NULL ,
+	[RVBDT] [datetime] NULL ,
+	[RVTYP] [char] (3) NULL ,
+	[RDBC] [char] (6) NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[OPER] [char] (1) NULL ,
+	[RATE] [decimal](18, 3) NULL ,
+	[COPS] [decimal](9, 0) NOT NULL ,
+	[CHLN] [char] (10) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[TRDBOXREGISTER] ADD 
+	CONSTRAINT [DF_TRDBOXREGISTER_GRSWGT] DEFAULT ('0') FOR [GRSWGT],
+	CONSTRAINT [DF_TRDBOXREGISTER_TRWGT] DEFAULT ('0') FOR [TRWGT],
+	CONSTRAINT [DF_TRDBOXREGISTER_NTWGT] DEFAULT ('0') FOR [NTWGT],
+	CONSTRAINT [DF_TRDBOXREGISTER_DSPWGT] DEFAULT ('0') FOR [DSPWGT],
+	CONSTRAINT [DF_TRDBOXREGISTER_RECSTAT] DEFAULT ('A') FOR [RECSTAT],
+	CONSTRAINT [DF__TRDBOXREGI__COPS__08AB2BC8] DEFAULT (0) FOR [COPS]
+
+

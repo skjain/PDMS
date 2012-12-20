@@ -1,0 +1,18 @@
+CREATE TABLE [dbo].[RPT_CONSUMPTION] (
+	[COMP] [char] (4) NULL ,
+	[CODE] [char] (12) NULL ,
+	[TTYP] [char] (3) NULL ,
+	[BINCD] [varchar] (25) NULL ,
+	[V_ICOD] [varchar] (10) NULL ,
+	[RATE] [decimal](18, 3) NULL ,
+	[QNTY] [decimal](18, 3) NULL ,
+	[V_SCOD] [varchar] (3) NULL ,
+	[D_ISSDATE] [datetime] NULL ,
+	[V_DCOD] [char] (3) NULL ,
+	[OPER] [char] (1) NULL ,
+	[COLR] [char] (6) NULL ,
+	[BATCH] [varchar] (10) NULL ,
+	[TMPO] [decimal](18, 2) NULL ,
+	[TMPC] [decimal](18, 2) NULL ,
+	[ISSMODE] [char] (1) NULL CONSTRAINT [DF_RPTCONSUMPTION_ISSMODE] DEFAULT ('X')
+) ON [PRIMARY]

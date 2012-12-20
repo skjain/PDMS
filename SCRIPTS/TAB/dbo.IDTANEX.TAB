@@ -1,0 +1,15 @@
+CREATE TABLE [dbo].[IDTANEX] (
+	[COMP] [char] (4) NOT NULL ,
+	[INDTCD] [char] (12) NOT NULL ,
+	[DATE] [datetime] NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[SRCH] [smallint] NOT NULL ,
+	[ADES] [varchar] (255) NULL ,
+	CONSTRAINT [PK_IDTANEX] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[INDTCD],
+		[ICOD],
+		[SRCH]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

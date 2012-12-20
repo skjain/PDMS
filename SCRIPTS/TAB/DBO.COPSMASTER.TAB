@@ -1,0 +1,52 @@
+CREATE TABLE [dbo].[COPSMASTER] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[DBCD] [char] (6) NOT NULL ,
+	[COPN] [decimal](18, 0) NOT NULL ,
+	[FIYR] [char] (4) NOT NULL ,
+	[DATE] [datetime] NOT NULL ,
+	[TIME] [char] (5) NOT NULL ,
+	[LTNO] [char] (10) NOT NULL ,
+	[MCNO] [char] (6) NOT NULL ,
+	[GRAD] [char] (5) NOT NULL ,
+	[OGRD] [char] (5) NOT NULL ,
+	[FICD] [char] (10) NOT NULL ,
+	[DFNO] [int] NOT NULL ,
+	[PSNO] [char] (10) NOT NULL ,
+	[CPWT] [decimal](18, 3) NOT NULL ,
+	[GRWT] [decimal](18, 3) NOT NULL ,
+	[WGHT] [decimal](18, 3) NOT NULL ,
+	[CHKR] [varchar] (50) NOT NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[SYSR] [char] (1) NOT NULL ,
+	[USER] [varchar] (25) NULL ,
+	[BOXN] [char] (10) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[COPSMASTER] WITH NOCHECK ADD 
+	CONSTRAINT [PK_COPSMASTER] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[COPN],
+		[FIYR]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[COPSMASTER] WITH NOCHECK ADD 
+	CONSTRAINT [DF_COPSMASTER_COPN] DEFAULT (1) FOR [COPN],
+	CONSTRAINT [DF_COPSMASTER_DFNO] DEFAULT (0) FOR [DFNO],
+	CONSTRAINT [DF_COPSMASTER_CPWT] DEFAULT (0) FOR [CPWT],
+	CONSTRAINT [DF_COPSMASTER_GRWT] DEFAULT (0) FOR [GRWT],
+	CONSTRAINT [DF_COPSMASTER_WGHT] DEFAULT (0) FOR [WGHT],
+	CONSTRAINT [DF_COPSMASTER_RECSTAT] DEFAULT ('A') FOR [RECSTAT],
+	CONSTRAINT [DF_COPSMASTER_SYSR] DEFAULT ('N') FOR [SYSR]
+
+

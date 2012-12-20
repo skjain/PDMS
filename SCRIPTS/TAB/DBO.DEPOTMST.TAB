@@ -1,0 +1,27 @@
+CREATE TABLE [dbo].[DEPOTMST] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[CODE] [char] (6) NOT NULL ,
+	[NAME] [char] (50) NULL ,
+	[PDBC] [char] (6) NULL ,
+	[PCOD] [char] (6) NULL ,
+	[PURPTY] [char] (6) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[DEPOTMST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_DEPOTMST] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[DVCD],
+		[CODE]
+	)  ON [PRIMARY] 
+
+

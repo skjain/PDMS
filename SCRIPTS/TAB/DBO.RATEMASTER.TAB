@@ -1,0 +1,23 @@
+CREATE TABLE [dbo].[RATEMASTER] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[PARTYID] [char] (6) NOT NULL ,
+	[ITEMID] [char] (10) NOT NULL ,
+	[GRADE] [numeric](18, 0) NOT NULL ,
+	[STARTDATE] [datetime] NOT NULL ,
+	[ENDDATE] [datetime] NOT NULL ,
+	[RATE] [decimal](18, 3) NOT NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[USER] [char] (25) NOT NULL ,
+	[SYSR] [char] (1) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[RATEMASTER] WITH NOCHECK ADD 
+	CONSTRAINT [DF_RATEMASTER_RATE] DEFAULT (0) FOR [RATE],
+	CONSTRAINT [DF_RATEMASTER_RECSTAT] DEFAULT ('A') FOR [RECSTAT],
+	CONSTRAINT [DF_RATEMASTER_SYSR] DEFAULT ('N') FOR [SYSR]

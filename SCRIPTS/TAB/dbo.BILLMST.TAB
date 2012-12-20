@@ -1,0 +1,38 @@
+CREATE TABLE [dbo].[BILLMST] (
+	[COMP] [char] (4) NOT NULL ,
+	[VTYP] [char] (3) NOT NULL ,
+	[SRNO] [char] (12) NOT NULL ,
+	[VCOD] [char] (6) NULL ,
+	[DCOD] [char] (3) NULL ,
+	[VBNO] [char] (10) NULL ,
+	[DATE] [datetime] NULL ,
+	[QDISA] [decimal](18, 3) NULL ,
+	[PFCHRG] [decimal](18, 3) NULL ,
+	[EXCISE] [decimal](18, 3) NULL ,
+	[NCCD] [decimal](18, 3) NULL ,
+	[EDCESS] [decimal](18, 3) NULL ,
+	[HI_EDCESS] [decimal](18, 3) NULL ,
+	[CSTLST] [decimal](18, 3) NULL ,
+	[INSURANCE] [decimal](18, 3) NULL ,
+	[FREIGHT] [decimal](18, 3) NULL ,
+	[CDTY] [decimal](18, 3) NULL ,
+	[CDTY_EXCISE] [decimal](18, 3) NULL ,
+	[CESS_CDTY] [decimal](18, 3) NULL ,
+	[HCESS_CDTY] [decimal](18, 3) NULL ,
+	[ADTY] [decimal](18, 3) NULL ,
+	[OTHERS] [decimal](18, 3) NULL ,
+	[ITOT] [decimal](18, 3) NULL ,
+	[TDTY] [decimal](18, 3) NULL ,
+	[BNET] [decimal](18, 3) NULL ,
+	[BAMT] [decimal](18, 3) NULL ,
+	[PAMT] [decimal](18, 3) NULL ,
+	[SYSD] [datetime] NULL ,
+	[CUSR] [varchar] (12) NULL ,
+	[TQTY] [decimal](18, 3) NULL ,
+	CONSTRAINT [PK_BILLMST] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[VTYP],
+		[SRNO]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

@@ -1,0 +1,5 @@
+CREATE TABLE [dbo].[COSTCENTRE] (
+	[CODE] [char] (3) NOT NULL ,
+	[NAME] [varchar] (30) NOT NULL ,
+	[C_LOCATION] [char] (3) NOT NULL 
+) ON [PRIMARY]

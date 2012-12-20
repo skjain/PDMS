@@ -1,0 +1,24 @@
+CREATE TABLE [dbo].[DAILYSTAT] (
+	[COMP] [char] (4) NULL ,
+	[UNIT] [char] (6) NULL ,
+	[VTYP] [char] (3) NULL ,
+	[DBCD] [varchar] (6) NULL ,
+	[VBNO] [char] (15) NULL ,
+	[PCOD] [varchar] (100) NULL ,
+	[QNTY] [decimal](18, 3) NOT NULL ,
+	[CUSR] [varchar] (20) NULL ,
+	[AMNT] [decimal](18, 2) NOT NULL ,
+	[ACTN] [char] (1) NULL ,
+	[DTTM] [datetime] NULL ,
+	[TRANDTTM] [datetime] NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL ,
+	[SRNO] [char] (13) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[DAILYSTAT] ADD 
+	CONSTRAINT [DF_DAILYSTAT_QNTY_1] DEFAULT (0) FOR [QNTY],
+	CONSTRAINT [DF_DAILYSTAT_QNTY] DEFAULT (0) FOR [AMNT]

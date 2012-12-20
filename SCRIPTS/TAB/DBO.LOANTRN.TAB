@@ -1,0 +1,24 @@
+CREATE TABLE [dbo].[LOANTRN] (
+	[COMP] [char] (4) NOT NULL ,
+	[CODE] [char] (12) NOT NULL ,
+	[SRCH] [smallint] NOT NULL CONSTRAINT [DF_LOANTRN_SRCH] DEFAULT (1),
+	[VTYP] [char] (3) NULL ,
+	[DATE] [datetime] NULL ,
+	[PCOD] [char] (6) NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[PCES] [decimal](18, 0) NOT NULL CONSTRAINT [DEFAULT_LOANTRN_PCES] DEFAULT (0),
+	[QNTY] [decimal](18, 3) NOT NULL CONSTRAINT [DEFAULT_LOANTRN_QNTY] DEFAULT (0),
+	[RATE] [decimal](18, 3) NOT NULL CONSTRAINT [DEFAULT_LOANTRN_RATE] DEFAULT (0),
+	[ITOT] AS ([RATE] * [QNTY]) ,
+	[LONO] [char] (12) NULL ,
+	[CHLN] [char] (10) NULL ,
+	[GPNO] [char] (12) NULL ,
+	[RMRK] [varchar] (200) NULL ,
+	[DVCD] [char] (6) NULL ,
+	CONSTRAINT [PK_LOANTRN] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[CODE],
+		[ICOD]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

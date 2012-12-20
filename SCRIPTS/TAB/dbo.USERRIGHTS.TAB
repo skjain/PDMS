@@ -1,0 +1,38 @@
+CREATE TABLE [dbo].[USERRIGHTS] (
+	[COMP] [char] (4) NOT NULL ,
+	[MODULE] [char] (6) NOT NULL ,
+	[MODNAME] [varchar] (50) NOT NULL ,
+	[USERCODE] [varchar] (25) NOT NULL ,
+	[ADDNEW] [sql_variant] NOT NULL ,
+	[CHANGE] [sql_variant] NOT NULL ,
+	[REMOVE] [sql_variant] NOT NULL ,
+	[VIEWING] [sql_variant] NOT NULL ,
+	[PRINTING] [sql_variant] NOT NULL ,
+	[CATA] [char] (1) NULL ,
+	[GRP] [char] (20) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL ,
+	[SRCH] [decimal](9, 0) NULL ,
+	[PDMSNO] [decimal](18, 0) NOT NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[USERRIGHTS] WITH NOCHECK ADD 
+	CONSTRAINT [PK_USERRIGHTS] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[MODULE],
+		[MODNAME],
+		[USERCODE],
+		[PDMSNO]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[USERRIGHTS] ADD 
+	CONSTRAINT [DF__USERRIGHTS__SRCH__7A083880] DEFAULT (0) FOR [SRCH],
+	CONSTRAINT [DF__USERRIGHT__PDMSN__565519B9] DEFAULT (1) FOR [PDMSNO]
+
+

@@ -1,0 +1,35 @@
+CREATE TABLE [dbo].[BANKMST] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[CODE] [char] (6) NOT NULL ,
+	[NAME] [varchar] (50) NULL ,
+	[RVOU] [char] (10) NULL ,
+	[PVOU] [char] (10) NULL ,
+	[RCOD] [char] (6) NULL ,
+	[OPNG] [decimal](18, 2) NULL ,
+	[RTGSCOD] [char] (50) NULL ,
+	[SWIFTCOD] [char] (50) NULL ,
+	[CASHFLOW] [char] (1) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL ,
+	[ACNO] [char] (20) NULL ,
+	[SWIFTCODE] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[BANKMST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_BANKMST] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[CODE]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[BANKMST] ADD 
+	CONSTRAINT [DF_BANKMST_OPNG] DEFAULT (0) FOR [OPNG],
+	CONSTRAINT [DF_BANKMST_CASHFLOW] DEFAULT ('N') FOR [CASHFLOW]
+
+

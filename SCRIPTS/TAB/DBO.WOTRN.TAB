@@ -1,0 +1,38 @@
+CREATE TABLE [dbo].[WOTRN] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[DPCD] [char] (3) NULL ,
+	[DBCD] [char] (6) NOT NULL ,
+	[VTYP] [char] (3) NOT NULL ,
+	[SRNO] [char] (12) NOT NULL ,
+	[SRCH] [smallint] NOT NULL ,
+	[VBNO] [char] (12) NOT NULL ,
+	[DATE] [datetime] NOT NULL ,
+	[PCOD] [char] (6) NOT NULL ,
+	[ICOD] [char] (6) NOT NULL ,
+	[QNTY] [decimal](18, 3) NOT NULL ,
+	[RATE] [decimal](18, 3) NOT NULL ,
+	[DISC] [decimal](18, 3) NOT NULL ,
+	[GROSSAMOUNT] [decimal](18, 3) NOT NULL ,
+	[COMMDESC] [varchar] (255) NULL ,
+	[CFLG] [char] (1) NULL ,
+	[RMRK] [varchar] (100) NULL ,
+	[RDAT] [datetime] NULL ,
+	[RUSR] [varchar] (20) NULL ,
+	[IDTCD] [char] (12) NULL ,
+	[ADES] [varchar] (255) NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[SYSR] [char] (1) NOT NULL  ,
+	[EXTRA1] [char] (50) NULL ,
+	[EXTRA2] [char] (50) NULL ,
+	[EXTRA3] [char] (50) NULL ,
+	[EXTRA4] [char] (50) NULL ,
+	[EXTRA5] [char] (50) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[WOTRN] ADD 
+	CONSTRAINT [DF_WOTRN_DISC] DEFAULT (0) FOR [DISC],
+	CONSTRAINT [DF_WOTRN_GROSSAMOUNT] DEFAULT (0) FOR [GROSSAMOUNT],
+	CONSTRAINT [DF_WOTRN_RECSTAT] DEFAULT ('A') FOR [RECSTAT],
+	CONSTRAINT [DF_WOTRN_SYSR] DEFAULT ('N') FOR [SYSR]

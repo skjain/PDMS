@@ -1,0 +1,7 @@
+CREATE TABLE [dbo].[INVTMP] (
+	[GRAD] [char] (15) NULL ,
+	[RATE] [decimal](18, 9) NULL ,
+	[PCES] [decimal](18, 9) NULL ,
+	[QNTY] [decimal](18, 9) NULL ,
+	[AMNT] [decimal](18, 9) NULL 
+) ON [PRIMARY]

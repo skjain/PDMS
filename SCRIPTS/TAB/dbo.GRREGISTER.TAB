@@ -1,0 +1,24 @@
+CREATE TABLE [dbo].[GRREGISTER] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[COMPLAINNO] [char] (6) NOT NULL ,
+	[REPORTNO] [char] (6) NOT NULL ,
+	[GRMEMONO] [char] (6) NOT NULL ,
+	[GRDATE] [datetime] NOT NULL ,
+	[REASON] [varchar] (250) NULL ,
+	[GRKEPTAT] [varchar] (100) NULL ,
+	[GRLIFTEDTAG] [char] (1) NOT NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[USER] [varchar] (25) NOT NULL ,
+	[SYSR] [char] (1) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[GRREGISTER] WITH NOCHECK ADD 
+	CONSTRAINT [DF_GRREGISTER_GRLIFTEDTAG] DEFAULT ('P') FOR [GRLIFTEDTAG],
+	CONSTRAINT [DF_GRREGISTER_RECSTAT] DEFAULT ('A') FOR [RECSTAT]

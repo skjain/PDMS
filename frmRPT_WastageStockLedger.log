@@ -1,0 +1,5 @@
+Line 73: Class MSMask.MaskEdBox of control dtFrom was not a loaded control class.
+Line 99: Class MSMask.MaskEdBox of control dtTo was not a loaded control class.
+Line 274: Class Crystal.CrystalReport of control CRPT was not a loaded control class.
+Line 282: Class WelchButton.lvButtons_H of control cmdpreview was not a loaded control class.
+Line 308: Class WelchButton.lvButtons_H of control cmdCancel was not a loaded control class.

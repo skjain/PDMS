@@ -1,0 +1,81 @@
+CREATE TABLE [dbo].[ACCMST] (
+	[CODE] [char] (6) NOT NULL ,
+	[HCOD] [char] (6) NOT NULL ,
+	[GLCD] [char] (6) NOT NULL ,
+	[RCOD] [char] (6) NOT NULL ,
+	[DRCR] [char] (1) NOT NULL ,
+	[NAME] [varchar] (50) NOT NULL ,
+	[LIMB] [decimal](18, 2) NOT NULL ,
+	[OPBL] [decimal](18, 2) NOT NULL ,
+	[DRBL] [decimal](18, 2) NOT NULL ,
+	[CRBL] [decimal](18, 2) NOT NULL ,
+	[CURB] [decimal](18, 0) NULL ,
+	[ADRO] [varchar] (250) NULL ,
+	[ADRF] [varchar] (250) NULL ,
+	[TELE] [varchar] (40) NULL ,
+	[BRCD] [char] (6) NULL ,
+	[ARCD] [char] (6) NULL ,
+	[CPCD] [char] (6) NULL ,
+	[TXCD] [char] (6) NULL ,
+	[CDAY] [int] NOT NULL ,
+	[LSTN] [varchar] (40) NULL ,
+	[CSTN] [varchar] (40) NULL ,
+	[ECCN] [varchar] (40) NULL ,
+	[PANO] [varchar] (40) NULL ,
+	[RANG] [varchar] (40) NULL ,
+	[DIVI] [varchar] (40) NULL ,
+	[COMM] [varchar] (40) NULL ,
+	[ELCN] [varchar] (40) NULL ,
+	[EXAD] [varchar] (50) NULL ,
+	[FXNO] [varchar] (21) NULL ,
+	[MAILADD] [varchar] (255) NULL ,
+	[WEBURL] [varchar] (255) NULL ,
+	[CTYP] [char] (6) NULL ,
+	[PROV] [char] (1) NULL ,
+	[REMA] [text] NULL ,
+	[CNTP] [varchar] (50) NULL ,
+	[TTYP] [varchar] (15) NULL ,
+	[PFAD1] [varchar] (50) NULL ,
+	[PFAD2] [varchar] (50) NULL ,
+	[POAD1] [varchar] (50) NULL ,
+	[POAD2] [varchar] (50) NULL ,
+	[POAD3] [varchar] (50) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL ,
+	[COUNTRYCODE] [char] (6) NULL ,
+	[STATECODE] [char] (6) NULL ,
+	[CITYCODE] [char] (6) NULL ,
+	[MOBILE] [char] (50) NULL ,
+	[BANK] [char] (50) NULL ,
+	[RTGSCODE] [char] (50) NULL ,
+	[BANKACNO] [char] (50) NULL ,
+	[SRVTAXNO] [char] (50) NULL ,
+	[AUTORECO] [char] (1) NOT NULL ,
+	[ACCTYPE] [char] (20) NOT NULL 
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[ACCMST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_ACCMST] PRIMARY KEY  CLUSTERED 
+	(
+		[CODE]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[ACCMST] ADD 
+	CONSTRAINT [DF_ACCMST_LIMB] DEFAULT (0) FOR [LIMB],
+	CONSTRAINT [DF_ACCMST_OPBL] DEFAULT (0) FOR [OPBL],
+	CONSTRAINT [DF_ACCMST_DRBL] DEFAULT (0) FOR [DRBL],
+	CONSTRAINT [DF_ACCMST_CRBL] DEFAULT (0) FOR [CRBL],
+	CONSTRAINT [DF_ACCMST_CDAY] DEFAULT (0) FOR [CDAY],
+	CONSTRAINT [DF__ACCMST__AUTORECO__34170EBF] DEFAULT ('N') FOR [AUTORECO],
+	CONSTRAINT [DF__ACCMST__ACCTYPE__49EEDF40] DEFAULT ('None') FOR [ACCTYPE],
+	CONSTRAINT [UK_ACCMST_NAME] UNIQUE  NONCLUSTERED 
+	(
+		[NAME]
+	)  ON [PRIMARY] 
+
+

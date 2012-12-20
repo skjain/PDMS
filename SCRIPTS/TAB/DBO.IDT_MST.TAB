@@ -1,0 +1,27 @@
+CREATE TABLE [dbo].[IDT_MST] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[INDNO] [char] (12) NOT NULL ,
+	[INDDT] [datetime] NOT NULL ,
+	[DPCD] [char] (3) NOT NULL ,
+	[INPR] [char] (1) NOT NULL ,
+	[TQTY] [decimal](18, 3) NOT NULL ,
+	[BNET] [decimal](18, 3) NOT NULL ,
+	[STATUS] [char] (1) NOT NULL ,
+	[RMRK] [char] (250) NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[USER] [varchar] (25) NULL ,
+	[SYSR] [char] (1) NULL ,
+	[FIELD1] [char] (50) NULL ,
+	[FIELD2] [char] (50) NULL ,
+	[FIELD3] [char] (50) NULL ,
+	[FIELD4] [char] (50) NULL ,
+	[FIELD5] [char] (50) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[IDT_MST] ADD 
+	CONSTRAINT [DF_IDT_MST_TQTY] DEFAULT (0) FOR [TQTY],
+	CONSTRAINT [DF_IDT_MST_BNET] DEFAULT (0) FOR [BNET],
+	CONSTRAINT [DF_IDT_MST_STATUS] DEFAULT ('P') FOR [STATUS],
+	CONSTRAINT [DF_IDT_MST_RECSTAT] DEFAULT ('A') FOR [RECSTAT]

@@ -1,0 +1,48 @@
+CREATE TABLE [dbo].[PMTADV] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[VTYP] [char] (3) NOT NULL ,
+	[SRNO] [char] (13) NOT NULL ,
+	[SRCH] [smallint] NOT NULL ,
+	[SLNO] [varchar] (10) NOT NULL ,
+	[SLDT] [smalldatetime] NOT NULL ,
+	[VBNO] [char] (10) NOT NULL ,
+	[DATE] [datetime] NOT NULL ,
+	[BNET] [decimal](18, 3) NOT NULL ,
+	[PAMT] [decimal](18, 3) NOT NULL ,
+	[RTYP] [char] (3) NULL ,
+	[RSRN] [char] (13) NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[CUSR] [varchar] (15) NOT NULL ,
+	[SYSD] [datetime] NOT NULL ,
+	[PCOD] [char] (6) NOT NULL ,
+	[DBCD] [char] (6) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[PMTADV] WITH NOCHECK ADD 
+	CONSTRAINT [PK_PAYADV] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[DVCD],
+		[VTYP],
+		[SRNO],
+		[SRCH],
+		[SLNO]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[PMTADV] WITH NOCHECK ADD 
+	CONSTRAINT [DF_PAYADV_BNET] DEFAULT (0) FOR [BNET],
+	CONSTRAINT [DF_PAYADV_PAMT] DEFAULT (0) FOR [PAMT],
+	CONSTRAINT [DF_PAYADV_RECSTAT] DEFAULT ('N') FOR [RECSTAT],
+	CONSTRAINT [DF_PAYADV_SYSD] DEFAULT (getdate()) FOR [SYSD]
+
+

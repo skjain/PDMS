@@ -1,0 +1,46 @@
+CREATE TABLE [dbo].[CONFIG] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[DBCD] [char] (6) NOT NULL ,
+	[VTYP] [char] (3) NOT NULL ,
+	[SRCH] [int] NOT NULL ,
+	[CATA] [char] (2) NULL ,
+	[OPER] [char] (1) NOT NULL ,
+	[PERC] [decimal](18, 2) NOT NULL ,
+	[AMNT] [decimal](18, 2) NOT NULL ,
+	[CODE] [char] (6) NULL ,
+	[NICK] [varchar] (15) NULL ,
+	[POST] [char] (1) NOT NULL ,
+	[FMLA] [varchar] (100) NULL ,
+	[RFTX] [char] (1) NULL ,
+	[RMRK] [char] (1) NULL ,
+	[MTOT] [decimal](18, 2) NOT NULL ,
+	[PTOT] [decimal](18, 2) NOT NULL ,
+	[RDOF] [char] (1) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[CONFIG] WITH NOCHECK ADD 
+	CONSTRAINT [PK_CONFIG] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[DVCD],
+		[DBCD],
+		[VTYP],
+		[SRCH]
+	)  ON [PRIMARY] 
+
+ALTER TABLE [dbo].[CONFIG] WITH NOCHECK ADD 
+	CONSTRAINT [DF_CONFIG_DVCD] DEFAULT ('000001') FOR [DVCD],
+	CONSTRAINT [DF_CONFIG_PERC] DEFAULT (0) FOR [PERC],
+	CONSTRAINT [DF_CONFIG_AMNT] DEFAULT (0) FOR [AMNT],
+	CONSTRAINT [DF_CONFIG_MTOT] DEFAULT (0) FOR [MTOT],
+	CONSTRAINT [DF_CONFIG_PTOT] DEFAULT (0) FOR [PTOT]
+
+

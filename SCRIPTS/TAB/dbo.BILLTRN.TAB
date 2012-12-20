@@ -1,0 +1,30 @@
+CREATE TABLE [dbo].[BILLTRN] (
+	[COMP] [char] (4) NOT NULL ,
+	[VTYP] [char] (3) NOT NULL ,
+	[SRNO] [char] (12) NOT NULL ,
+	[SRCH] [smallint] NOT NULL ,
+	[VCOD] [char] (6) NOT NULL ,
+	[DCOD] [char] (3) NOT NULL ,
+	[VBNO] [char] (10) NOT NULL ,
+	[DATE] [datetime] NULL ,
+	[ICOD] [char] (10) NULL ,
+	[RATE] [decimal](18, 3) NULL ,
+	[QNTY] [decimal](18, 3) NULL ,
+	[RFCD] [char] (12) NULL ,
+	[RFDT] [datetime] NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[BILLTRN] WITH NOCHECK ADD 
+	CONSTRAINT [PK_BILLTRN] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[VTYP],
+		[SRNO],
+		[SRCH],
+		[VCOD],
+		[DCOD],
+		[VBNO]
+	)  ON [PRIMARY] 
+
+

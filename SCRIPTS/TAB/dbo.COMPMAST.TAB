@@ -1,0 +1,51 @@
+CREATE TABLE [dbo].[COMPMAST] (
+	[COMP_PATH] [char] (4) NOT NULL ,
+	[COMP_ACID] [datetime] NOT NULL ,
+	[COMP_ACFD] [datetime] NOT NULL ,
+	[COMP_NAME] [varchar] (70) NOT NULL ,
+	[COMP_FNAM] [varchar] (70) NULL ,
+	[COMP_ADD] [varchar] (150) NULL ,
+	[COMP_FADD] [varchar] (150) NULL ,
+	[COMP_PASS] [char] (4) NULL ,
+	[COMP_TELE] [varchar] (40) NULL ,
+	[COMP_FAXN] [varchar] (50) NULL ,
+	[COMP_MAIL] [varchar] (50) NULL ,
+	[COMP_PANO] [varchar] (40) NULL ,
+	[COMP_LSDT] [varchar] (10) NULL ,
+	[COMP_URL] [varchar] (50) NULL ,
+	[COMP_TANO] [varchar] (50) NULL ,
+	[COMP_INDT] [datetime] NULL ,
+	[COMP_OAD1] [varchar] (50) NULL ,
+	[COMP_OAD2] [varchar] (50) NULL ,
+	[COMP_OAD3] [varchar] (50) NULL ,
+	[COMP_FAD1] [varchar] (50) NULL ,
+	[COMP_FAD2] [varchar] (50) NULL ,
+	[COMP_FAD3] [varchar] (50) NULL ,
+	[COMP_LDAT] [datetime] NULL ,
+	[COMP_FLAG] [char] (1) NOT NULL ,
+	[COMP_CURR] [varchar] (5) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL ,
+	[SEGMENTREQ] [char] (1) NOT NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[COMPMAST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_COMPMAST] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP_PATH]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[COMPMAST] ADD 
+	CONSTRAINT [DF__COMPMAST__COMP_F__7EAF2247] DEFAULT ('0') FOR [COMP_FLAG],
+	CONSTRAINT [DF_COMPMAST_COMP_CURR] DEFAULT ('Rs') FOR [COMP_CURR],
+	CONSTRAINT [DF_COMPMAST_SEGMENTREQ] DEFAULT ('N') FOR [SEGMENTREQ]
+
+
+ CREATE  UNIQUE  INDEX [IX_COMPMAST] ON [dbo].[COMPMAST]([COMP_PATH], [COMP_NAME]) ON [PRIMARY]
+
+

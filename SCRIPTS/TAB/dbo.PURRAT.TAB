@@ -1,0 +1,7 @@
+CREATE TABLE [dbo].[PURRAT] (
+	[SRNO] [char] (12) NOT NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[STDT] [datetime] NOT NULL ,
+	[ENDT] [datetime] NOT NULL ,
+	[RATE] [decimal](18, 2) NOT NULL 
+) ON [PRIMARY]

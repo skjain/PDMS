@@ -1,0 +1,26 @@
+CREATE TABLE [dbo].[SCAT_MST] (
+	[CODE] [char] (2) NOT NULL ,
+	[NAME] [varchar] (50) NOT NULL ,
+	[RCOD] [char] (2) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[SCAT_MST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_SCAT_MST] PRIMARY KEY  CLUSTERED 
+	(
+		[CODE]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[SCAT_MST] WITH NOCHECK ADD 
+	CONSTRAINT [IX_SCAT_MST] UNIQUE  NONCLUSTERED 
+	(
+		[NAME]
+	)  ON [PRIMARY] 
+
+

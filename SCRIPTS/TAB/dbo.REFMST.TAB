@@ -1,0 +1,41 @@
+CREATE TABLE [dbo].[REFMST] (
+	[CATA] [char] (1) NOT NULL ,
+	[CODE] [char] (6) NOT NULL ,
+	[NAME] [varchar] (50) NOT NULL ,
+	[PERC] [decimal](18, 2) NOT NULL ,
+	[ADDR] [varchar] (120) NULL ,
+	[TELP] [varchar] (25) NULL ,
+	[RTRN] [char] (1) NULL ,
+	[ADL1] [varchar] (50) NULL ,
+	[ADL2] [varchar] (50) NULL ,
+	[AREA] [varchar] (20) NULL ,
+	[RCOD] [char] (6) NULL ,
+	[RNAM] [varchar] (50) NULL ,
+	[CRLIMIT] [decimal](18, 0) NULL ,
+	[CRDAYS] [decimal](18, 0) NULL ,
+	[CD] [decimal](18, 4) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[REFMST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_REFMST] PRIMARY KEY  CLUSTERED 
+	(
+		[CODE]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[REFMST] WITH NOCHECK ADD 
+	CONSTRAINT [DF_REFMST_CRLIMIT] DEFAULT (0) FOR [CRLIMIT],
+	CONSTRAINT [DF_REFMST_CRDAYS] DEFAULT (0) FOR [CRDAYS],
+	CONSTRAINT [DF_REFMST_CD] DEFAULT (0) FOR [CD],
+	CONSTRAINT [IX_REFMST] UNIQUE  NONCLUSTERED 
+	(
+		[NAME]
+	)  ON [PRIMARY] 
+
+

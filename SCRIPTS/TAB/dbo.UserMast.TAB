@@ -1,0 +1,27 @@
+CREATE TABLE [dbo].[UserMast] (
+	[COMP] [char] (4) NULL ,
+	[Uid] [varchar] (25) NOT NULL ,
+	[Pass] [varchar] (15) NULL ,
+	[User_FName] [varchar] (25) NULL ,
+	[User_MName] [varchar] (5) NULL ,
+	[User_LName] [varchar] (25) NULL ,
+	[User_FLNM] [varchar] (55) NULL ,
+	[User_CHPS] [char] (1) NULL ,
+	[User_ACST] [char] (1) NULL ,
+	[User_LEVEL] [char] (1) NULL ,
+	[User_dept] [varchar] (50) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[UserMast] WITH NOCHECK ADD 
+	CONSTRAINT [PK_UserMast] PRIMARY KEY  CLUSTERED 
+	(
+		[Uid]
+	)  ON [PRIMARY] 
+
+

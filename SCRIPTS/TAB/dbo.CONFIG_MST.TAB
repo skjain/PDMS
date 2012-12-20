@@ -1,0 +1,20 @@
+CREATE TABLE [dbo].[CONFIG_MST] (
+	[COMP] [char] (4) NOT NULL ,
+	[MODULE] [char] (4) NOT NULL ,
+	[MODULENM] [VARCHAR] (50) NOT NULL,
+	[DEPT] [char] (3) NOT NULL ,
+	[USERCODE] [varchar] (25) NOT NULL ,
+	[ADDNEW] [bit] NOT NULL ,
+	[CHANGE] [bit] NOT NULL ,
+	[REMOVE] [bit] NOT NULL ,
+	[VIEWING] [bit] NOT NULL ,
+	[PRINTING] [bit] NOT NULL ,
+	[CATA] [CHAR] (1) NOT NULL,
+	CONSTRAINT [PK_CONFIG_MST] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[MODULE],
+		[USERCODE],
+		[CATA]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

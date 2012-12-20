@@ -1,0 +1,29 @@
+CREATE TABLE [dbo].[VENDOR_MST] (
+	[CODE] [char] (6) NOT NULL ,
+	[V_NAME] [varchar] (100) NOT NULL ,
+	[V_VOADD] [varchar] (255) NULL ,
+	[V_VFADD] [varchar] (255) NULL ,
+	[V_VCPNAME] [varchar] (50) NULL ,
+	[V_VCST] [varchar] (50) NULL ,
+	[V_VLST] [varchar] (50) NULL ,
+	[V_VECCNO] [varchar] (50) NULL ,
+	[V_VOTEL] [varchar] (25) NULL ,
+	[V_VFTEL] [varchar] (25) NULL ,
+	[V_VEMAIL] [varchar] (255) NULL ,
+	[V_VFAXNO] [varchar] (25) NULL ,
+	[V_TERMS] [varchar] (100) NULL ,
+	[V_VPANO] [varchar] (40) NULL ,
+	[C_USERCODE] [varchar] (25) NOT NULL ,
+	[V_CATA] [char] (1) NOT NULL ,
+	[RCOD] [char] (6) NULL ,
+	[OPER] [char] (1) NULL ,
+	[VSTN] [char] (1) NOT NULL CONSTRAINT [DF_VENDOR_MST_VSTN] DEFAULT 'L',
+	[BRCD] [CHAR] (6) NULL,
+	[TXCD] [CHAR] (6) NULL ,
+	[MOBILE] [VARCHAR] (25),
+	CONSTRAINT [PK_VENDOR_MST] PRIMARY KEY  CLUSTERED 
+	(
+		[CODE],
+		[V_CATA]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

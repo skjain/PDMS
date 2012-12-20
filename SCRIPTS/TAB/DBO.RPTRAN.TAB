@@ -1,0 +1,63 @@
+CREATE TABLE [dbo].[RPTRAN] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[VTYP] [char] (3) NOT NULL ,
+	[SRNO] [char] (13) NOT NULL ,
+	[SRCH] [int] NOT NULL ,
+	[SRC3] [int] NOT NULL ,
+	[EDTF] [char] (1) NOT NULL ,
+	[DBAC] [char] (6) NOT NULL ,
+	[VBNO] [char] (10) NOT NULL ,
+	[JVBN] [char] (10) NULL ,
+	[DATE] [datetime] NOT NULL ,
+	[CRAC] [char] (6) NOT NULL ,
+	[CDNO] [char] (10) NULL ,
+	[CDDT] [datetime] NULL ,
+	[SLPNO] [char] (5) NULL ,
+	[BKCD] [char] (6) NULL ,
+	[CLDT] [datetime] NULL ,
+	[DBNR] [varchar] (250) NULL ,
+	[PCOD] [char] (6) NULL ,
+	[PNAR] [varchar] (250) NULL ,
+	[PAMT] [decimal](18, 2) NOT NULL ,
+	[SDBC] [char] (6) NULL ,
+	[SVBN] [char] (10) NULL ,
+	[RAMT] [decimal](18, 2) NOT NULL ,
+	[DBNA] [decimal](18, 2) NOT NULL ,
+	[CRNA] [decimal](18, 2) NOT NULL ,
+	[RETG] [decimal](18, 2) NOT NULL ,
+	[ONAC] [char] (1) NOT NULL ,
+	[BSR1] [char] (3) NULL ,
+	[BSR2] [char] (13) NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[RPTRAN] WITH NOCHECK ADD 
+	CONSTRAINT [PK_RPTRAN] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[VTYP],
+		[SRNO],
+		[SRCH],
+		[SRC3],
+		[DBAC]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[RPTRAN] ADD 
+	CONSTRAINT [DF_RPTRAN_PAMT] DEFAULT (0) FOR [PAMT],
+	CONSTRAINT [DF_RPTRAN_RAMT] DEFAULT (0) FOR [RAMT],
+	CONSTRAINT [DF_RPTRAN_DBNA] DEFAULT (0) FOR [DBNA],
+	CONSTRAINT [DF_RPTRAN_DBNA1] DEFAULT (0) FOR [CRNA],
+	CONSTRAINT [DF_RPTRAN_CRNA1] DEFAULT (0) FOR [RETG],
+	CONSTRAINT [DF_RPTRAN_ONAC] DEFAULT ('U') FOR [ONAC],
+	CONSTRAINT [DF_RPTRAN_RECSTAT] DEFAULT ('A') FOR [RECSTAT]
+
+

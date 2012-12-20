@@ -1,0 +1,40 @@
+CREATE TABLE [dbo].[WVGLOTTRN] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[LTNO] [char] (10) NOT NULL ,
+	[FICD] [char] (10) NOT NULL ,
+	[RICD] [char] (10) NOT NULL ,
+	[CDEN] [decimal](18, 4) NOT NULL ,
+	[CATA] [char] (1) NOT NULL ,
+	[ENDS] [decimal](18, 4) NOT NULL ,
+	[REED] [decimal](18, 4) NOT NULL ,
+	[PICK] [decimal](18, 4) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[WVGLOTTRN] WITH NOCHECK ADD 
+	CONSTRAINT [PK_WVGLOTTRN] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[DVCD],
+		[LTNO],
+		[FICD],
+		[RICD],
+		[CATA]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[WVGLOTTRN] WITH NOCHECK ADD 
+	CONSTRAINT [DF_WVGLOTTRN_CDEN] DEFAULT (0) FOR [CDEN],
+	CONSTRAINT [DF_WVGLOTTRN_ENDS] DEFAULT (0) FOR [ENDS],
+	CONSTRAINT [DF_WVGLOTTRN_REED] DEFAULT (0) FOR [REED],
+	CONSTRAINT [DF_WVGLOTTRN_PICK] DEFAULT (0) FOR [PICK]
+
+

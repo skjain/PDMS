@@ -1,0 +1,24 @@
+CREATE TABLE [dbo].[JOBMST] (
+	[COMP] [char] (4) NOT NULL ,
+	[JOBID] [char] (12) NOT NULL ,
+	[CHLNNO] [varchar] (10) NULL ,
+	[DBCD] [char] (6) NULL ,
+	[VTYP] [char] (3) NOT NULL ,
+	[VCOD] [char] (6) NULL ,
+	[JOBDATE] [datetime] NULL ,
+	[VHCL] [varchar] (15) NULL ,
+	[CUSR] [varchar] (25) NULL ,
+	[V_REMARKS] [varchar] (255) NULL ,
+	[JOBSTAT] [char] (1) NULL ,
+	[GPNO] [char] (12) NULL ,
+	[DEPT] [char] (3) NULL ,
+	[RNAM] [varchar] (100) NULL ,
+	[BILLNO] [VARCHAR] (15),
+	[BILLSTAT] [CHAR] (1),
+	CONSTRAINT [PK_JOBMST] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[JOBID],
+		[VTYP]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

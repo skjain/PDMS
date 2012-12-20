@@ -1,0 +1,9 @@
+CREATE TABLE [dbo].[POINTMST] (
+	[SCHCD] [char] (12) NOT NULL ,
+	[CCOD] [char] (6) NOT NULL ,
+	[OPER] [varchar] (2) NULL ,
+	[SRCH] [smallint] NULL ,
+	[AMNT] [decimal](18, 2) NULL CONSTRAINT [DF_POINTMST_AMNT] DEFAULT (0),
+	[PONT] [decimal](18, 2) NULL CONSTRAINT [DF_POINTMST_PONT] DEFAULT (0),
+	[MODE] [char] (1) NULL 
+) ON [PRIMARY]

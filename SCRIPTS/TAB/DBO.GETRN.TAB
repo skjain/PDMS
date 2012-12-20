@@ -1,0 +1,42 @@
+CREATE TABLE [dbo].[GETRN] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[CODE] [char] (12) NOT NULL ,
+	[GENO] [char] (7) NOT NULL ,
+	[SRCH] [smallint] NOT NULL ,
+	[DATE] [datetime] NOT NULL ,
+	[CUSR] [varchar] (50) NOT NULL ,
+	[PONO] [char] (12) NOT NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[QNTY] [decimal](18, 3) NOT NULL ,
+	[PSRC] [smallint] NULL ,
+	[SYSD] [datetime] NOT NULL ,
+	[DVCD] [char] (10) NULL ,
+	[DCOD] [char] (3) NOT NULL ,
+	[VCOD] [char] (6) NOT NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[SYSR] [char] (1) NOT NULL ,
+	[EXTRA1] [char] (50) NULL ,
+	[EXTRA2] [char] (50) NULL ,
+	[EXTRA3] [char] (50) NULL ,
+	[EXTRA4] [char] (50) NULL ,
+	[EXTRA5] [char] (50) NULL ,
+	[GRADE] [numeric](18, 0) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[GETRN] WITH NOCHECK ADD 
+	CONSTRAINT [PK_GEMST] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[CODE],
+		[SRCH],
+		[PONO],
+		[ICOD]
+	)  ON [PRIMARY] 
+
+ALTER TABLE [dbo].[GETRN] ADD 
+	CONSTRAINT [DF_GEMST_QNTY] DEFAULT (0) FOR [QNTY],
+	CONSTRAINT [DF_GEMST_SYSD] DEFAULT (getdate()) FOR [SYSD],
+	CONSTRAINT [DF_GETRN_RECSTAT] DEFAULT ('A') FOR [RECSTAT],
+	CONSTRAINT [DF_GETRN_SYSR] DEFAULT ('N') FOR [SYSR]

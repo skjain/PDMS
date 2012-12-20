@@ -1,0 +1,23 @@
+CREATE TABLE [dbo].[REQ_MST] (
+	[COMP] [char] (4) NOT NULL ,
+	[CODE] [varchar] (9) NOT NULL ,
+	[D_REQDATE] [datetime] NOT NULL ,
+	[TQTY] [decimal](18, 0) NULL ,
+	[V_SCOD] [char] (3) NULL ,
+	[V_DCODE] [varchar] (3) NOT NULL ,
+	[V_UCODE] [varchar] (20) NOT NULL ,
+	[C_REQ_STATUS] [char] (1) NOT NULL ,
+	[V_REMARKS] [varchar] (100) NULL ,
+	[REQ_FLAG]  [CHAR] (1) NOT NULL CONSTRAINT [DF_IDT_MST_REQ_FLAG] DEFAULT ('N'),
+	CONSTRAINT [PK_REQ_MST] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[CODE]
+	)  ON [PRIMARY] ,
+	CONSTRAINT [FK_REQ_MST_STORE_MST] FOREIGN KEY 
+	(
+		[V_SCOD]
+	) REFERENCES [dbo].[STORE_MST] (
+		[CODE]
+	)
+) ON [PRIMARY]

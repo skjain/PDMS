@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[LOCATION] (
+	[LOCID] [char] (6) NOT NULL ,
+	[LOCNAME] [char] (50) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+

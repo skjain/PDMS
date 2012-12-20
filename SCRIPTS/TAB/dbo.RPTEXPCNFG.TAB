@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[RPTEXPCNFG] (
+	[COMP] [char] (4) NULL ,
+	[UNIT] [char] (6) NULL ,
+	[BAMT] [decimal](18, 2) NULL ,
+	[PCOD] [char] (6) NULL,
+	[HOST] [varchar] (50) NULL ,
+) ON [PRIMARY]
+

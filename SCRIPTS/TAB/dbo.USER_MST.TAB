@@ -1,0 +1,17 @@
+CREATE TABLE [dbo].[USER_MST] (
+	[COMP] [char] (4) NULL ,
+	[Uid] [varchar] (25) NOT NULL ,
+	[Pass] [varchar] (15) NULL ,
+	[User_FName] [varchar] (25) NULL ,
+	[User_MName] [varchar] (5) NULL ,
+	[User_LName] [varchar] (25) NULL ,
+	[User_FLNM] [varchar] (55) NULL ,
+	[User_CHPS] [char] (1) NULL ,
+	[User_ACST] [char] (1) NULL ,
+	[User_LEVEL] [char] (1) NULL ,
+	[USER_DEPT] [CHAR] (3) NULL ,
+	CONSTRAINT [PK_UserMast] PRIMARY KEY  CLUSTERED 
+	(
+		[Uid]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

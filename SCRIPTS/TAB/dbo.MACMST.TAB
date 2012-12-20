@@ -1,0 +1,33 @@
+CREATE TABLE [dbo].[MACMST] (
+	[COMP] [char] (4) NOT NULL ,
+	[CODE] [char] (6) NOT NULL ,
+	[NAME] [char] (50) NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[SPDL] [numeric](18, 3) NULL ,
+	[BOXN] [char] (10) NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL ,
+	[WIPEFFECT] [char] (1) NOT NULL ,
+	[FDESC] [varchar] (250) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[MACMST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_MACMST] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[CODE],
+		[DVCD],
+		[UNIT]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[MACMST] ADD 
+	CONSTRAINT [DF_MACMST_SPDL] DEFAULT (0) FOR [SPDL],
+	CONSTRAINT [DF__MACMST__WIPEFFEC__4C8CEB77] DEFAULT ('Y') FOR [WIPEFFECT]
+
+

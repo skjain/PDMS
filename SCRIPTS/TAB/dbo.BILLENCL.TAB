@@ -1,0 +1,16 @@
+CREATE TABLE [dbo].[BILLENCL] (
+	[COMP] [char] (4) NOT NULL ,
+	[CODE] [char] (12) NOT NULL ,
+	[DATE] [datetime] NULL ,
+	[CATA] [char] (1) NULL ,
+	[RFCD] [char] (12) NOT NULL ,
+	[RMRK] [varchar] (255) NULL ,
+	[SYSD] [datetime] NOT NULL CONSTRAINT [DF_BILLENCL_SYSD] DEFAULT (getdate()),
+	[SYSU] [varchar] (25) NULL ,
+	CONSTRAINT [PK_BILLENCL] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[CODE],
+		[RFCD]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

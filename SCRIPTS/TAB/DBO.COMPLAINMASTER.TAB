@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[COMPLAINMASTER] (
+	[COMPLAINCODE] [char] (6) NOT NULL ,
+	[COMPLAINNAME] [char] (100) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+

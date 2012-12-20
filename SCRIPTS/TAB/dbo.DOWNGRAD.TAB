@@ -1,0 +1,21 @@
+CREATE TABLE [dbo].[DOWNGRAD] (
+	[COMP] [char] (4) NULL ,
+	[UNIT] [char] (6) NULL ,
+	[DVCD] [char] (6) NULL ,
+	[PCOD] [char] (6) NULL ,
+	[ICOD] [char] (10) NULL ,
+	[DENI] [varchar] (25) NULL ,
+	[GRAD] [varchar] (5) NULL ,
+	[QNTY] [decimal](18, 3) NULL ,
+	[PERC] [decimal](18, 2) NULL ,
+	[LTNO] [varchar] (10) NULL ,
+	[HOST] [varchar] (15) NULL ,
+	[TDYQ] [decimal](18, 3) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+

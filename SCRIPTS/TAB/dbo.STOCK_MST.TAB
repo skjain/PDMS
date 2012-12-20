@@ -1,0 +1,21 @@
+CREATE TABLE [dbo].[STOCK_MST] (
+	[COMP] [char] (4) NOT NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[V_SCOD] [char] (3) NOT NULL ,
+	[BINCD] [varchar] (25) NOT NULL ,
+	[BAL_QTY] [decimal](18, 3) NOT NULL CONSTRAINT [DF_STOCK_MST_BAL_QTY] DEFAULT (0),
+	[BAL_TEMP] [decimal](18, 3) NULL ,
+	CONSTRAINT [PK_STOCK_MST] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[ICOD],
+		[V_SCOD],
+		[BINCD]
+	)  ON [PRIMARY] ,
+	CONSTRAINT [FK_STOCK_MST_ITMMST] FOREIGN KEY 
+	(
+		[ICOD]
+	) REFERENCES [dbo].[ITMMST] (
+		[CODE]
+	) 
+) ON [PRIMARY]

@@ -1,0 +1,32 @@
+CREATE TABLE [dbo].[LOTTRN] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[LTNO] [char] (10) NOT NULL ,
+	[SRCH] [int] NOT NULL ,
+	[RICD] [char] (10) NULL ,
+	[MRGN] [char] (10) NULL ,
+	[PERC] [decimal](18, 3) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[LOTTRN] WITH NOCHECK ADD 
+	CONSTRAINT [PK_LOTTRN] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[DVCD],
+		[LTNO],
+		[SRCH]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[LOTTRN] WITH NOCHECK ADD 
+	CONSTRAINT [DF_LOTTRN_PERC] DEFAULT (0) FOR [PERC]
+
+

@@ -1,0 +1,23 @@
+CREATE TABLE [dbo].[LBLFLE] (
+	[FLNM] [char] (10) NOT NULL ,
+	[WIDT] [numeric](18, 0) NOT NULL ,
+	[HGHT] [numeric](18, 0) NOT NULL ,
+	[ACRS] [numeric](18, 0) NOT NULL ,
+	[MRGN] [numeric](18, 0) NOT NULL ,
+	[LINS] [numeric](18, 0) NOT NULL ,
+	[SPCE] [numeric](18, 0) NOT NULL ,
+	[LIN1] [varchar] (50) NULL ,
+	[LIN2] [varchar] (50) NULL ,
+	[LIN3] [varchar] (50) NULL ,
+	[LIN4] [varchar] (50) NULL ,
+	[LIN5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[LBLFLE] WITH NOCHECK ADD 
+	CONSTRAINT [PK_LBLFLE] PRIMARY KEY  CLUSTERED 
+	(
+		[FLNM]
+	)  ON [PRIMARY] 
+
+

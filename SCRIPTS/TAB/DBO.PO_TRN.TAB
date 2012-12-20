@@ -1,0 +1,70 @@
+CREATE TABLE [dbo].[PO_TRN] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[DPCD] [char] (3) NOT NULL ,
+	[DBCD] [char] (6) NOT NULL ,
+	[PONO] [char] (12) NOT NULL ,
+	[PODATE] [datetime] NOT NULL ,
+	[QTNNO] [char] (12) NULL ,
+	[SRCH] [smallint] NOT NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[PCS] [decimal](18, 3) NOT NULL ,
+	[QTY] [decimal](18, 3) NOT NULL ,
+	[RATE] [decimal](18, 5) NOT NULL ,
+	[ITEMDISCOUNT] [decimal](18, 3) NOT NULL ,
+	[AMNT] [decimal](18, 3) NOT NULL ,
+	[VATPER] [decimal](18, 3) NOT NULL ,
+	[VATAMOUNT] [decimal](18, 3) NOT NULL ,
+	[ITOT] [decimal](18, 3) NOT NULL ,
+	[ADES] [varchar] (255) NULL ,
+	[INDNO] [char] (12) NULL ,
+	[INDSRCH] [smallint] NULL ,
+	[ITMSTAT] [char] (1) NOT NULL ,
+	[POSTAT] [char] (1) NULL ,
+	[CRDATE] [datetime] NULL ,
+	[APREMARKS] [varchar] (255) NULL ,
+	[APBY] [char] (25) NULL ,
+	[APDATE] [datetime] NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[USER] [char] (25) NOT NULL ,
+	[SYSR] [char] (1) NOT NULL ,
+	[EXTRA1] [char] (50) NULL ,
+	[EXTRA2] [char] (50) NULL ,
+	[EXTRA3] [char] (50) NULL ,
+	[EXTRA4] [char] (50) NULL ,
+	[EXTRA5] [char] (50) NULL ,
+	[GRADE] [numeric](18, 0) NULL ,
+	[ADES1] [varchar] (250) NULL ,
+	[ADES2] [varchar] (250) NULL ,
+	[ADES3] [varchar] (255) NULL ,
+	[DELDATE] [datetime] NOT NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[PO_TRN] WITH NOCHECK ADD 
+	CONSTRAINT [PK_PO_TRN] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[DBCD],
+		[PONO],
+		[SRCH]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[PO_TRN] ADD 
+	CONSTRAINT [DF_PO_TRN_PCS] DEFAULT (0) FOR [PCS],
+	CONSTRAINT [DF_PO_TRN_QTY] DEFAULT (0) FOR [QTY],
+	CONSTRAINT [DF_PO_TRN_RATE] DEFAULT (0) FOR [RATE],
+	CONSTRAINT [DF_PO_TRN_DISC] DEFAULT (0) FOR [ITEMDISCOUNT],
+	CONSTRAINT [DF_PO_TRN_AMNT] DEFAULT (0) FOR [AMNT],
+	CONSTRAINT [DF_PO_TRN_VATPER] DEFAULT (0) FOR [VATPER],
+	CONSTRAINT [DF_PO_TRN_VATAMOUNT] DEFAULT (0) FOR [VATAMOUNT],
+	CONSTRAINT [DF_PO_TRN_ITOT] DEFAULT (0) FOR [ITOT],
+	CONSTRAINT [DF_PO_TRN_ITMSTAT] DEFAULT ('P') FOR [ITMSTAT],
+	CONSTRAINT [DF_PO_TRN_RECSTAT] DEFAULT ('A') FOR [RECSTAT],
+	CONSTRAINT [DF_PO_TRN_SYSR] DEFAULT ('N') FOR [SYSR],
+	CONSTRAINT [DF__PO_TRN__DELDATE__245E3335] DEFAULT (0) FOR [DELDATE]
+
+

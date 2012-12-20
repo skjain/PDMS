@@ -1,0 +1,52 @@
+CREATE TABLE [dbo].[UNTMST] (
+	[COMP] [char] (4) NOT NULL ,
+	[CODE] [char] (6) NOT NULL ,
+	[NAME] [varchar] (50) NOT NULL ,
+	[FADD] [varchar] (150) NULL ,
+	[PHNO] [varchar] (50) NULL ,
+	[FXNO] [varchar] (50) NULL ,
+	[EMAL] [varchar] (50) NULL ,
+	[URL] [varchar] (50) NULL ,
+	[TANO] [varchar] (50) NULL ,
+	[PANO] [varchar] (50) NULL ,
+	[STNO] [varchar] (50) NULL ,
+	[LSTN] [varchar] (50) NULL ,
+	[CSTN] [varchar] (50) NULL ,
+	[ECCN] [varchar] (50) NULL ,
+	[RANG] [varchar] (50) NULL ,
+	[DIVI] [varchar] (50) NULL ,
+	[COMM] [varchar] (50) NULL ,
+	[PLANO] [varchar] (50) NULL ,
+	[BLNO] [char] (3) NULL ,
+	[DFAD1] [varchar] (50) NULL ,
+	[DFAD2] [varchar] (50) NULL ,
+	[DFAD3] [varchar] (50) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL ,
+	[TAXDEPT] [char] (150) NULL ,
+	[ADD_ACOM] [char] (250) NOT NULL ,
+	[ADD_SUP] [char] (250) NOT NULL ,
+	[ADD_DCOM] [char] (250) NOT NULL ,
+	[RMK1] [char] (250) NOT NULL ,
+	[RMK2] [char] (250) NOT NULL ,
+	[RMK3] [char] (250) NOT NULL ,
+        [EXMNO] [CHAR] (100) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[UNTMST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_UNTMST] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[CODE]
+	)  ON [PRIMARY] 
+
+ALTER TABLE [dbo].[UNTMST] WITH NOCHECK ADD 
+	CONSTRAINT [DF__UNTMST__ADD_ACOM__324C5FD9] DEFAULT ('') FOR [ADD_ACOM],
+	CONSTRAINT [DF__UNTMST__ADD_SUP__33408412] DEFAULT ('') FOR [ADD_SUP],
+	CONSTRAINT [DF__UNTMST__ADD_DCOM__3434A84B] DEFAULT ('') FOR [ADD_DCOM],
+	CONSTRAINT [DF__UNTMST__RMK1__3528CC84] DEFAULT ('') FOR [RMK1],
+	CONSTRAINT [DF__UNTMST__RMK2__361CF0BD] DEFAULT ('') FOR [RMK2],
+	CONSTRAINT [DF__UNTMST__RMK3__371114F6] DEFAULT ('') FOR [RMK3]

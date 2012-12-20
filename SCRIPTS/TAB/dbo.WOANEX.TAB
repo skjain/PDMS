@@ -1,0 +1,15 @@
+CREATE TABLE [dbo].[WOANEX] (
+	[COMP] [char] (4) NOT NULL ,
+	[WOCODE] [char] (12) NOT NULL ,
+	[DATE] [datetime] NOT NULL ,
+	[SRCH] [char] (10) NOT NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[ADES] [text] NOT NULL ,
+	CONSTRAINT [PK_WPANEX] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[WOCODE],
+		[SRCH],
+		[ICOD]
+	)  ON [PRIMARY] 
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]

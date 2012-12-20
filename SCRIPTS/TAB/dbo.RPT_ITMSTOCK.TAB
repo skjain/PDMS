@@ -1,0 +1,14 @@
+CREATE TABLE [dbo].[RPT_ITMSTOCK] (
+	[COMP] [char] (10) NOT NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[IGCD] [char] (2) NULL ,
+	[SCOD] [char] (3) NOT NULL ,
+	[BINCD] [varchar] (25) NULL ,
+	[OP_QTY] [decimal](18, 3) NULL ,
+	[TOT_PUR] [decimal](18, 3) NULL ,
+	[TOT_ISU] [decimal](18, 3) NULL ,
+	[TOT_RTN] [decimal](18, 3) NULL ,
+	[BAL_QTY] [decimal](18, 3) NULL ,
+	[A_RATE] [decimal](18, 3) NULL ,
+	[STK_CODE] [char] (3) NULL 
+) ON [PRIMARY]

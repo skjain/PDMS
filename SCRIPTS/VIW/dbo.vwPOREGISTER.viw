@@ -1,0 +1,30 @@
+CREATE VIEW dbo.vwPORegister              
+AS              
+SELECT     ISNULL(TRNMAN.AMNT,0) AS ADVN,TRNMAN.CDNO AS CDNO,dbo.po_trn.amnt, DBO.PO_MST.EXTRA1,dbo.PO_TRN.COMP, dbo.PO_TRN.DBCD,dbo.PO_TRN.UNIT, dbo.PO_TRN.DVCD, dbo.PO_TRN.DPCD, dbo.PO_TRN.PONO, dbo.PO_TRN.PODATE,dbo.PO_TRN.DELDATE,               
+                      dbo.ACCMST.NAME AS SUPPLIERNAME, dbo.PO_TRN.INDNO, dbo.PO_TRN.ICOD, dbo.ITMMST.NAME AS ITEMNAME, dbo.ITMMST.IGCD,               
+                      dbo.PO_TRN.QTY, dbo.PO_TRN.RATE, dbo.PO_TRN.ITMSTAT, dbo.PO_TRN.POSTAT, dbo.PO_MST.POSTATUS, dbo.PO_TRN.APBY,               
+                      dbo.PO_TRN.APDATE, dbo.STORETRAN.VBNO, dbo.STORETRAN.DATE, ISNULL(dbo.STORETRAN.CHLNQTY,0) AS CHLNQTY, ISNULL(dbo.STORETRAN.QNTY,0) AS ACCEPTQTY,        
+                      ISNULL(dbo.STORETRAN.REJECTQTY,0) AS REJECTQTY, dbo.STORETRAN.GRAD AS GRADE, dbo.COMPMAST.COMP_NAME, dbo.UNTMST.NAME AS UNITNAME,               
+                      dbo.DIVMST.NAME AS DIVNAME, dbo.DEPT_MST.NAME AS DEPTNAME, dbo.IGMMST.NAME AS ITEMGROUPNAME, dbo.IGMMST.IHCD,               
+                      dbo.SCAT_MST.NAME AS ITEMCATEGORY, dbo.PO_MST.PCOD, dbo.PO_TRN.RECSTAT           
+FROM         dbo.PO_TRN INNER JOIN              
+                      dbo.PO_MST ON dbo.PO_MST.COMP = dbo.PO_TRN.COMP AND dbo.PO_MST.UNIT = dbo.PO_TRN.UNIT AND               
+                      dbo.PO_MST.PONO = dbo.PO_TRN.PONO AND dbo.PO_MST.DBCD = dbo.PO_TRN.DBCD AND   
+                      dbo.PO_TRN.RECSTAT = dbo.PO_MST.RECSTAT INNER JOIN              
+                      dbo.ACCMST ON dbo.ACCMST.CODE = dbo.PO_MST.PCOD INNER JOIN              
+                      dbo.ITMMST ON dbo.ITMMST.CODE = dbo.PO_TRN.ICOD LEFT OUTER JOIN              
+                      dbo.STORETRAN ON dbo.PO_TRN.RECSTAT = dbo.STORETRAN.RECSTAT AND   
+                      dbo.STORETRAN.COMP = dbo.PO_TRN.COMP AND               
+                      dbo.STORETRAN.UNIT = dbo.PO_TRN.UNIT AND dbo.STORETRAN.PONO = dbo.PO_TRN.PONO AND   
+                      dbo.STORETRAN.ICOD = dbo.PO_TRN.ICOD AND dbo.STORETRAN.POSRCH = dbo.PO_TRN.SRCH      
+                      INNER JOIN              
+                      dbo.COMPMAST ON dbo.COMPMAST.COMP_PATH = dbo.PO_TRN.COMP INNER JOIN              
+                      dbo.UNTMST ON dbo.UNTMST.COMP = dbo.PO_TRN.COMP AND dbo.UNTMST.CODE = dbo.PO_TRN.UNIT INNER JOIN              
+                      dbo.DIVMST ON dbo.DIVMST.COMP = dbo.PO_TRN.COMP AND dbo.DIVMST.UNIT = dbo.PO_TRN.UNIT AND               
+                      dbo.DIVMST.CODE = dbo.PO_TRN.DVCD LEFT OUTER JOIN              
+                      dbo.DEPT_MST ON dbo.DEPT_MST.COMP = dbo.PO_TRN.COMP AND dbo.DEPT_MST.UNIT = dbo.PO_TRN.UNIT AND               
+                      dbo.DEPT_MST.CODE = dbo.PO_TRN.DPCD INNER JOIN              
+                      dbo.IGMMST ON dbo.IGMMST.CODE = dbo.ITMMST.IGCD INNER JOIN              
+                      dbo.SCAT_MST ON dbo.SCAT_MST.CODE = dbo.IGMMST.IHCD              
+LEFT JOIN TRNMAN ON TRNMAN.COMP=PO_MST.COMP AND TRNMAN.UNIT=PO_MST.UNIT AND TRNMAN.PONO=PO_MST.PONO             
+WHERE     (dbo.PO_TRN.RECSTAT = 'A')        

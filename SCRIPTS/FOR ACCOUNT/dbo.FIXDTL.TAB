@@ -1,0 +1,64 @@
+CREATE TABLE [dbo].[FIXDTL] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[CODE] [char] (6) NOT NULL ,
+	[CSTM] [decimal](18, 2) NOT NULL ,
+	[PRDT] [datetime] NULL ,
+	[INDT] [datetime] NULL ,
+	[DPPR] [decimal](18, 4) NOT NULL ,
+	[MD01] [decimal](18, 2) NOT NULL ,
+	[MD02] [decimal](18, 2) NOT NULL ,
+	[MD03] [decimal](18, 2) NOT NULL ,
+	[MD04] [decimal](18, 2) NOT NULL ,
+	[MD05] [decimal](18, 2) NOT NULL ,
+	[MD06] [decimal](18, 2) NOT NULL ,
+	[MD07] [decimal](18, 2) NOT NULL ,
+	[MD08] [decimal](18, 2) NOT NULL ,
+	[MD09] [decimal](18, 2) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL ,
+	[addmore180] [decimal](18, 4) NOT NULL ,
+	[addless180] [decimal](18, 4) NOT NULL ,
+	[lesmore180] [decimal](18, 4) NOT NULL ,
+	[lesless180] [decimal](18, 4) NOT NULL ,
+	[adddepmore180] [decimal](18, 4) NOT NULL ,
+	[adddepless180] [decimal](18, 4) NOT NULL ,
+	[lesdepmore180] [decimal](18, 4) NOT NULL ,
+	[lesdepless180] [decimal](18, 4) NOT NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[FIXDTL] WITH NOCHECK ADD 
+	CONSTRAINT [PK_FIXDTL] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[CODE]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[FIXDTL] ADD 
+	CONSTRAINT [DF_FIXDTL_CSTM] DEFAULT (0) FOR [CSTM],
+	CONSTRAINT [DF_FIXDTL_DPPR] DEFAULT (0) FOR [DPPR],
+	CONSTRAINT [DF__FIXDTL__MD01__MD01] DEFAULT (0) FOR [MD01],
+	CONSTRAINT [DF__FIXDTL__MD02__MD02] DEFAULT (0) FOR [MD02],
+	CONSTRAINT [DF__FIXDTL__MD03__MD03] DEFAULT (0) FOR [MD03],
+	CONSTRAINT [DF__FIXDTL__MD04__MD04] DEFAULT (0) FOR [MD04],
+	CONSTRAINT [DF__FIXDTL__MD05__MD05] DEFAULT (0) FOR [MD05],
+	CONSTRAINT [DF__FIXDTL__MD06__MD06] DEFAULT (0) FOR [MD06],
+	CONSTRAINT [DF__FIXDTL__MD07__MD07] DEFAULT (0) FOR [MD07],
+	CONSTRAINT [DF__FIXDTL__MD08__MD08] DEFAULT (0) FOR [MD08],
+	CONSTRAINT [DF__FIXDTL__MD09__MD09] DEFAULT (0) FOR [MD09],
+	CONSTRAINT [DF__FIXDTL__addmore1__74C4C40A] DEFAULT (0) FOR [addmore180],
+	CONSTRAINT [DF__FIXDTL__addless1__64595217] DEFAULT (0) FOR [addless180],
+	CONSTRAINT [DF__FIXDTL__lesmore1__53EDE024] DEFAULT (0) FOR [lesmore180],
+	CONSTRAINT [DF__FIXDTL__lesless1__43826E31] DEFAULT (0) FOR [lesless180],
+	CONSTRAINT [DF__FIXDTL__adddepmo__3316FC3E] DEFAULT (0) FOR [adddepmore180],
+	CONSTRAINT [DF__FIXDTL__adddeple__22AB8A4B] DEFAULT (0) FOR [adddepless180],
+	CONSTRAINT [DF__FIXDTL__lesdepmo__12401858] DEFAULT (0) FOR [lesdepmore180],
+	CONSTRAINT [DF__FIXDTL__lesdeple__1AA0542F] DEFAULT (0) FOR [lesdepless180]
+
+

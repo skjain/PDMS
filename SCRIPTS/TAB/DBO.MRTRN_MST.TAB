@@ -1,0 +1,26 @@
+CREATE TABLE [dbo].[MRTRN_MST] (
+	[COMP] [char] (4) NOT NULL ,
+	[CODE] [varchar] (12) NOT NULL ,
+	[Date] [datetime] NOT NULL ,
+	[V_CHLN] [varchar] (15) NOT NULL ,
+	[VCOD] [char] (6) NULL ,
+	[V_MRNCODE] [varchar] (12) NOT NULL ,
+	[D_MRNDATE] [datetime] NOT NULL ,
+	[V_REMARK] [varchar] (100) NULL ,
+	[C_USERCODE] [varchar] (25) NOT NULL ,
+	[ONDATE] [datetime] NOT NULL ,
+	[GPNO] [char] (12) NULL ,
+	[RTYP] [char] (1) NULL  ,
+	[EXTRA1] [char] (50) NULL ,
+	[EXTRA2] [char] (50) NULL ,
+	[EXTRA3] [char] (50) NULL ,
+	[EXTRA4] [char] (50) NULL ,
+	[EXTRA5] [char] (50) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[MRTRN_MST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_Material_Return_Note] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[CODE]
+	)  ON [PRIMARY] 

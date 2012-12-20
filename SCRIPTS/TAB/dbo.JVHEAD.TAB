@@ -1,0 +1,16 @@
+CREATE TABLE [dbo].[JVHEAD] (
+	[COMP] [char] (4) NULL ,
+	[VTYP] [char] (3) NULL ,
+	[ACH1] [char] (6) NULL ,
+	[ACH2] [char] (6) NULL ,
+	[ACH3] [char] (6) NULL ,
+	[ACH4] [char] (6) NULL ,
+	[ACH5] [char] (6) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+

@@ -1,0 +1,5 @@
+Line 19: Class FramePlusCtl.FramePlus of control FramePlus1 was not a loaded control class.
+Line 42: Class Crystal.CrystalReport of control CRPT was not a loaded control class.
+Line 214: Class MSComCtl2.DTPicker of control txtdate was not a loaded control class.
+Line 235: Class WelchButton.lvButtons_H of control cmdSave was not a loaded control class.
+Line 261: Class WelchButton.lvButtons_H of control cmdExit was not a loaded control class.

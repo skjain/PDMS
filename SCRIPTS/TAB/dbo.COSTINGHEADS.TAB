@@ -1,0 +1,5 @@
+CREATE TABLE [dbo].[COSTINGHEADS] (
+	[CODE] [char] (2) NOT NULL ,
+	[NAME] [varchar] (50) NOT NULL ,
+	[SHRTNAME] [varchar] (25) NULL 
+) ON [PRIMARY]

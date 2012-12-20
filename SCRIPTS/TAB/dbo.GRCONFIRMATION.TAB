@@ -1,0 +1,20 @@
+CREATE TABLE [dbo].[GRCONFIRMATION] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[GRMEMONO] [char] (6) NOT NULL ,
+	[GRVOUCHERNO] [char] (6) NOT NULL ,
+	[GRLIFTEDDATE] [datetime] NOT NULL ,
+	[REMARKS] [varchar] (250) NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[USER] [varchar] (25) NOT NULL ,
+	[SYSR] [char] (1) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTAR2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[GRCONFIRMATION] WITH NOCHECK ADD 
+	CONSTRAINT [DF_GRCONFIRMATION_RECSTAT] DEFAULT ('A') FOR [RECSTAT]

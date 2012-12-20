@@ -1,0 +1,32 @@
+CREATE TABLE [dbo].[CUSTOMERS] (
+	[CODE] [char] (6) NOT NULL ,
+	[FNAME] [varchar] (25) NOT NULL ,
+	[MNAME] [varchar] (25) NULL ,
+	[LNAME] [varchar] (25) NOT NULL ,
+	[BDAT1] [datetime] NULL ,
+	[BDAT2] [datetime] NULL ,
+	[MAIL] [varchar] (250) NULL ,
+	[CNM1] [varchar] (25) NULL ,
+	[CNM2] [varchar] (25) NULL ,
+	[CNM3] [varchar] (25) NULL ,
+	[CBDT1] [datetime] NULL ,
+	[CBDT2] [datetime] NULL ,
+	[CBDT3] [datetime] NULL ,
+	[ADD1] [varchar] (10) NULL ,
+	[ADD2] [varchar] (25) NULL ,
+	[ADD3] [varchar] (100) NULL ,
+	[ADD4] [varchar] (100) NULL ,
+	[ADD5] [varchar] (50) NULL ,
+	[CITY] [varchar] (25) NULL CONSTRAINT [DF_Customers_CITY] DEFAULT ('SURAT'),
+	[PINCD] [varchar] (8) NULL ,
+	[PHNR1] [varchar] (12) NULL ,
+	[PHNR2] [varchar] (12) NULL ,
+	[PHNM] [varchar] (11) NULL ,
+	[DATE] [datetime] NULL ,
+	[VALID] [char] (1) NOT NULL ,
+	[USERNAME] [varchar] (24) NOT NULL ,
+	CONSTRAINT [PK_Customers] PRIMARY KEY  CLUSTERED 
+	(
+		[CODE]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

@@ -1,0 +1,23 @@
+CREATE TABLE [dbo].[PADDMST] (
+	[CODE] [char] (6) NOT NULL ,
+	[NAME] [varchar] (50) NOT NULL ,
+	[SRNO] [int] NOT NULL ,
+	[ADD1] [varchar] (50) NULL ,
+	[ADD2] [varchar] (50) NULL ,
+	[ADD3] [varchar] (50) NULL ,
+	[ADDR] [varchar] (200) NULL ,
+	[ARCD] [char] (6) NULL ,
+	[PHONE] [varchar] (50) NULL ,
+	[ECCNO] [varchar] (50) NULL ,
+	[LSTNO] [varchar] (50) NULL ,
+	[CSTNO] [varchar] (50) NULL ,
+	[STATUS] [char] (1) NULL ,
+	[RECSTAT] [char] (1) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[PADDMST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_PADDMST] PRIMARY KEY  CLUSTERED 
+	(
+		[CODE],
+		[SRNO]
+	)  ON [PRIMARY] 

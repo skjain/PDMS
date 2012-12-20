@@ -1,0 +1,7 @@
+CREATE TABLE [dbo].[SALRAT] (
+	[SRNO] [char] (12) NOT NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[STDT] [datetime] NOT NULL ,
+	[ENDT] [datetime] NOT NULL ,
+	[RATE] [decimal](18, 2) NOT NULL CONSTRAINT [DF_SALRAT_RATE] DEFAULT (0)
+) ON [PRIMARY]

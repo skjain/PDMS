@@ -1,0 +1,44 @@
+CREATE TABLE [dbo].[WOINDT] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[DEPT] [char] (3) NOT NULL ,
+	[CODE] [char] (12) NOT NULL ,
+	[SRCH] [smallint] NOT NULL ,
+	[IDAT] [datetime] NOT NULL ,
+	[ICOD] [char] (6) NOT NULL ,
+	[RATE] [decimal](18, 3) NOT NULL ,
+	[QNTY] [decimal](18, 3) NOT NULL ,
+	[COMMDESC] [varchar] (255) NULL ,
+	[IFLG] [char] (1) NOT NULL ,
+	[IUSR] [varchar] (25) NOT NULL ,
+	[SYSD] [datetime] NOT NULL ,
+	[SCOD] [char] (3) NULL ,
+	[IANX] [text] NULL ,
+	[RMRK] [varchar] (255) NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[SYSR] [char] (1) NOT NULL  ,
+	[EXTRA1] [char] (50) NULL ,
+	[EXTRA2] [char] (50) NULL ,
+	[EXTRA3] [char] (50) NULL ,
+	[EXTRA4] [char] (50) NULL ,
+	[EXTRA5] [char] (50) NULL 
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+ALTER TABLE [dbo].[WOINDT] WITH NOCHECK ADD 
+	CONSTRAINT [PK_WOINDT] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[CODE],
+		[SRCH],
+		[ICOD]
+	)  ON [PRIMARY] 
+
+ALTER TABLE [dbo].[WOINDT] ADD 
+	CONSTRAINT [DF_WOINDT_RATE] DEFAULT (0) FOR [RATE],
+	CONSTRAINT [DF_WOINDT_QNTY] DEFAULT (0) FOR [QNTY],
+	CONSTRAINT [DF_WOINDT_IDFG] DEFAULT ('N') FOR [IFLG],
+	CONSTRAINT [DF_WOINDT_SYSD] DEFAULT (getdate()) FOR [SYSD],
+	CONSTRAINT [DF_WOINDT_RECSTAT] DEFAULT ('A') FOR [RECSTAT],
+	CONSTRAINT [DF_WOINDT_SYSR] DEFAULT ('N') FOR [SYSR]

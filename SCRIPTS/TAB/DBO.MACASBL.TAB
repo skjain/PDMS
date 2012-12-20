@@ -1,0 +1,22 @@
+CREATE TABLE [dbo].[MACASBL] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[MCCD] [char] (6) NOT NULL ,
+	[SCCD] [char] (6) NOT NULL ,
+	[SBCD] [char] (6) NOT NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[MACASBL] WITH NOCHECK ADD 
+	CONSTRAINT [PK_MACASBL] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[DVCD],
+		[MCCD],
+		[SCCD],
+		[SBCD]
+	)  ON [PRIMARY] 
+
+

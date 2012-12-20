@@ -1,0 +1,53 @@
+CREATE TABLE [dbo].[ISS_MST] (
+	[AUID] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[COMP] [char] (4) NOT NULL ,
+	[CODE] [char] (12) NOT NULL ,
+	[TTYP] [char] (3) NOT NULL ,
+	[BINCD] [varchar] (25) NOT NULL ,
+	[V_ICOD] [varchar] (10) NOT NULL ,
+	[RATE] [decimal](18, 3) NOT NULL ,
+	[QNTY] [decimal](18, 3) NULL ,
+	[V_SCOD] [varchar] (3) NOT NULL ,
+	[ISSMODE] [char] (1) NOT NULL ,
+	[PCOD] [char] (6) NULL ,
+	[D_ISSDATE] [datetime] NOT NULL ,
+	[V_REQCODE] [varchar] (25) NULL ,
+	[V_ISSCODE] [varchar] (25) NULL ,
+	[V_DCOD] [char] (3) NULL ,
+	[SCOD] [char] (3) NULL ,
+	[ISS_TYP] [char] (1) NULL ,
+	[COSTCODE] [char] (2) NULL ,
+	[C_USERCODE] [varchar] (25) NOT NULL ,
+	[V_REMARKS] [varchar] (255) NULL ,
+	[D_DATE] [datetime] NOT NULL ,
+	[OPER] [char] (1) NULL ,
+	[COLR] [char] (6) NULL ,
+	[BATCH] [varchar] (20) NULL ,
+	[RTRN] [char] (1) NULL ,
+	[SRCH] [smallint] NOT NULL ,
+	[DVCD] [CHAR] (6) ,
+	[VBNO] [CHAR] (10) ,
+	[MVAT] [CHAR] (1) ,
+	[ITOT] AS [RATE] * [QNTY]
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[ISS_MST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_ISS_MST] PRIMARY KEY  CLUSTERED 
+	(
+		[AUID],
+		[COMP],
+		[CODE],
+		[TTYP],
+		[BINCD],
+		[V_ICOD],
+		[V_SCOD],
+		[SRCH]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[ISS_MST] WITH NOCHECK ADD 
+	CONSTRAINT [DF_ISS_MST_RTRN] DEFAULT ('N') FOR [RTRN],
+	CONSTRAINT [DF_ISS_MST_SRCH] DEFAULT (0) FOR [SRCH]
+
+

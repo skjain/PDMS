@@ -1,0 +1,16 @@
+CREATE TABLE [dbo].[LOANMST] (
+	[COMP] [char] (4) NOT NULL ,
+	[CODE] [char] (12) NOT NULL ,
+	[VTYP] [char] (3) NULL ,
+	[DATE] [datetime] NULL ,
+	[PCOD] [char] (6) NULL ,
+	[CHLN] [char] (10) NULL ,
+	[GPNO] [char] (12) NULL ,
+	[RMRK] [varchar] (200) NULL ,
+	[SYSD] [datetime] NOT NULL CONSTRAINT [DF_SYSD_LOANMST] DEFAULT (getdate()),
+	CONSTRAINT [PK_LOANMST] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[CODE]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

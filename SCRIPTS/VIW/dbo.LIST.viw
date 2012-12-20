@@ -1,0 +1,5 @@
+CREATE view List          
+as          
+ Select 'ACGRP' = GRPMST.NAME, ACCMST.code, ACCMST.name,ACCMST.TTYP,'ADRO'=adro, 'ADRF'=adrf, tele, 'area' = refmst.name, 'cpcd'= R.name, 'broker' = B.namE          
+from ACCMST JOIN GRPMST ON ACCMST.GLCD = GRPMST.CODE LEFT OUTER JOIN REFMST ON ACCMST.ARCD = REFMST.CODE LEFT OUTER JOIN REFMST  R ON ACCMST.CPCD = R.CODE          
+LEFT OUTER JOIN REFMST B ON ACCMST.BRCD = B.CODE   

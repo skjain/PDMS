@@ -1,0 +1,4 @@
+CREATE TABLE [dbo].[BIN_MST] (
+	[BINCD] [varchar] (25) NOT NULL ,
+	[SCOD] [char] (3) NOT NULL 
+) ON [PRIMARY]

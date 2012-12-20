@@ -1,0 +1,28 @@
+CREATE TABLE [dbo].[COMPLAINREGISTER] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NULL ,
+	[COMPLAINNO] [char] (6) NOT NULL ,
+	[COMPLAINDATE] [datetime] NOT NULL ,
+	[PARTYCODE] [char] (6) NOT NULL ,
+	[ITEMCODE] [char] (10) NULL ,
+	[INVOICENO] [char] (10) NOT NULL ,
+	[INVOICEDATE] [datetime] NOT NULL ,
+	[LOTNO] [char] (10) NULL ,
+	[GRADE] [char] (5) NULL ,
+	[COMPLAINCODE] [char] (6) NOT NULL ,
+	[SALESPERSONCODE] [char] (6) NOT NULL ,
+	[COMPLAINTAG] [char] (1) NOT NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[USER] [varchar] (25) NOT NULL ,
+	[SYSR] [char] (1) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[COMPLAINREGISTER] WITH NOCHECK ADD 
+	CONSTRAINT [DF_COMPLAINREGISTER_COMPLAINTAG] DEFAULT ('P') FOR [COMPLAINTAG],
+	CONSTRAINT [DF_COMPLAINREGISTER_RECSTAT] DEFAULT ('A') FOR [RECSTAT]

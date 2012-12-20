@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[MAINGRD] (
+	[GRAD] [char] (5) NULL ,
+	[PKGTYP] [char] (5) NULL ,
+	[EXTRA1] [char] (10) NULL ,
+	[EXTRA2] [char] (10) NULL ,
+	[EXTRA3] [char] (10) NULL ,
+	[EXTRA4] [char] (10) NULL ,
+	[EXTRA5] [char] (10) NULL 
+) ON [PRIMARY]
+
+

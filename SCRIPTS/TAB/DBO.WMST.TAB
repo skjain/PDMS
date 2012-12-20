@@ -1,0 +1,17 @@
+CREATE TABLE [dbo].[WMST] (
+	[CODE] [char] (6) NOT NULL ,
+	[NAME] [varchar] (250) NOT NULL ,
+	[ADES] [varchar] (250) NOT NULL ,
+	[UOM] [char] (10) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[WMST] WITH NOCHECK ADD 
+	CONSTRAINT [DF_WMST_OUM] DEFAULT ('NOS') FOR [UOM]
+
+

@@ -1,0 +1,39 @@
+CREATE TABLE [dbo].[TRNDTL] (
+	[COMP] [char] (4) NOT NULL ,
+	[VTYP] [char] (3) NOT NULL ,
+	[SRNO] [char] (13) NOT NULL ,
+	[SRCH] [int] NOT NULL ,
+	[UNIT] [char] (6) NULL ,
+	[VBNO] [char] (10) NULL ,
+	[DATE] [datetime] NULL ,
+	[ACOD] [char] (6) NULL ,
+	[DAMT] [decimal](18, 2) NOT NULL ,
+	[CAMT] [decimal](18, 2) NOT NULL ,
+	[RCOD] [char] (6) NULL ,
+	[AMNT] [decimal](18, 2) NOT NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[TRNDTL] WITH NOCHECK ADD 
+	CONSTRAINT [PK_TRNDTL] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[VTYP],
+		[SRNO],
+		[SRCH]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[TRNDTL] WITH NOCHECK ADD 
+	CONSTRAINT [DF_TRNDTL_DAMT] DEFAULT (0) FOR [DAMT],
+	CONSTRAINT [DF_TRNDTL_CAMT] DEFAULT (0) FOR [CAMT],
+	CONSTRAINT [DF_TRNDTL_AMNT] DEFAULT (0) FOR [AMNT],
+	CONSTRAINT [DF_TRNDTL_RECSTAT] DEFAULT ('A') FOR [RECSTAT]
+
+

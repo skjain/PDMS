@@ -1,0 +1,24 @@
+CREATE TABLE [dbo].[POREG] (
+	[COMP] [char] (4) NOT NULL ,
+	[PONO] [char] (12) NOT NULL ,
+	[PODT] [datetime] NULL ,
+	[PSRC] [smallint] NULL ,
+	[VCOD] [char] (6) NULL ,
+	[MRNCD] [char] (12) NULL ,
+	[MRNDT] [datetime] NULL ,
+	[MSRC] [smallint] NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[RATE] [decimal](18, 0) NULL ,
+	[OQTY] [decimal](18, 0) NULL ,
+	[DDAT] [datetime] NULL ,
+	[DVCD] [char] (6) NULL ,
+	[HOST] [varchar] (20) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[POREG] WITH NOCHECK ADD 
+	CONSTRAINT [DF_POREG_MSRC] DEFAULT (0) FOR [MSRC],
+	CONSTRAINT [DF_POREG_RATE] DEFAULT (0) FOR [RATE],
+	CONSTRAINT [DF_POREG_OQTY] DEFAULT (0) FOR [OQTY]
+
+

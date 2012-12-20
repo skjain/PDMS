@@ -1,0 +1,25 @@
+CREATE TABLE [dbo].[COMPLAINATTENDED] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NULL ,
+	[COMPLAINNO] [char] (6) NOT NULL ,
+	[REPORTNO] [char] (6) NOT NULL ,
+	[REPORTDATE] [datetime] NOT NULL ,
+	[TECHPERSONCODE] [char] (6) NOT NULL ,
+	[OBSERVATION] [varchar] (250) NULL ,
+	[SUGGESTION] [varchar] (250) NULL ,
+	[GRLIFT] [char] (1) NOT NULL ,
+	[GRAPPROVEDBY] [varchar] (25) NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[USER] [varchar] (25) NOT NULL ,
+	[SYSR] [char] (1) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[COMPLAINATTENDED] WITH NOCHECK ADD 
+	CONSTRAINT [DF_COMPLAINATTENDED_GRLIFTTAG] DEFAULT ('N') FOR [GRLIFT],
+	CONSTRAINT [DF_COMPLAINATTENDED_RECSTAT] DEFAULT ('A') FOR [RECSTAT]

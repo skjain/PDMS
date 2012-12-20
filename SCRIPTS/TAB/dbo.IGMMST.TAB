@@ -1,0 +1,60 @@
+CREATE TABLE [dbo].[IGMMST] (
+	[COMP] [char] (4) NULL ,
+	[CATA] [char] (1) NOT NULL ,
+	[IHCD] [char] (2) NULL ,
+	[CODE] [char] (3) NOT NULL ,
+	[NAME] [varchar] (50) NOT NULL ,
+	[OPNQ] [decimal](18, 3) NOT NULL ,
+	[PURQ] [decimal](18, 3) NOT NULL ,
+	[SALQ] [decimal](18, 3) NOT NULL ,
+	[BALQ] [decimal](20, 3) NULL ,
+	[OPNP] [decimal](18, 0) NOT NULL ,
+	[PURP] [decimal](18, 0) NOT NULL ,
+	[SALP] [decimal](18, 0) NOT NULL ,
+	[BALP] [decimal](20, 0) NULL ,
+	[RMRK] [char] (1) NULL ,
+	[CPRQ] [char] (1) NULL ,
+	[PKGR] [char] (1) NULL ,
+	[COPS] [char] (1) NULL ,
+	[DGRQ] [char] (1) NULL ,
+	[MRRQ] [char] (1) NULL ,
+	[LTRQ] [char] (1) NULL ,
+	[ADRQ] [char] (1) NULL ,
+	[EXCO] [char] (50) NULL ,
+	[CHAP] [char] (15) NULL ,
+	[SCAT] [char] (1) NULL ,
+	[RCOD] [char] (3) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL ,
+	[SPECIFICATION] [char] (1) NOT NULL ,
+	[MERGE] [char] (1) NOT NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[IGMMST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_IGMMST] PRIMARY KEY  CLUSTERED 
+	(
+		[CODE]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[IGMMST] ADD 
+	CONSTRAINT [DF_IGMMST_OPNQ] DEFAULT (0) FOR [OPNQ],
+	CONSTRAINT [DF_IGMMST_PURQ] DEFAULT (0) FOR [PURQ],
+	CONSTRAINT [DF_IGMMST_SALQ] DEFAULT (0) FOR [SALQ],
+	CONSTRAINT [DF_IGMMST_BALQ] DEFAULT (0) FOR [BALQ],
+	CONSTRAINT [DF_IGMMST_OPNP] DEFAULT (0) FOR [OPNP],
+	CONSTRAINT [DF_IGMMST_PURP] DEFAULT (0) FOR [PURP],
+	CONSTRAINT [DF_IGMMST_SALP] DEFAULT (0) FOR [SALP],
+	CONSTRAINT [DF_IGMMST_BALP] DEFAULT (0) FOR [BALP],
+	CONSTRAINT [DF__IGMMST__SPECIFIC__5854393C] DEFAULT (1) FOR [SPECIFICATION],
+	CONSTRAINT [DF__IGMMST__MERGE__59485D75] DEFAULT ('N') FOR [MERGE],
+	CONSTRAINT [IX_IGMMST] UNIQUE  NONCLUSTERED 
+	(
+		[NAME]
+	)  ON [PRIMARY] 
+
+

@@ -1,0 +1,19 @@
+CREATE TABLE [dbo].[SERVICEMAST] (
+	[COMP] [char] (4) NOT NULL ,
+	[UKEY] [char] (12) NOT NULL ,
+	[CODE] [char] (6) NOT NULL ,
+	[SRCH] [smallint] NOT NULL ,
+	[DATE] [datetime] NOT NULL ,
+	[CHNO] [varchar] (10) NULL ,
+	[CHDT] [datetime] NULL ,
+	[PCOD] [char] (6) NOT NULL ,
+	[AMNT] [decimal](18, 2) NULL CONSTRAINT [DF_SERVICEMAST_AMNT] DEFAULT (0),
+	[DEPT] [char] (3),
+	CONSTRAINT [PK_SERVICEMAST] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UKEY],
+		[CODE],
+		[SRCH]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

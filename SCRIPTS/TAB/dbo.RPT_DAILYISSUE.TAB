@@ -1,0 +1,18 @@
+CREATE TABLE [dbo].[RPT_DAILYISSUE] (
+	[AUID] [numeric](18, 0) NULL ,
+	[COMP] [char] (4) NULL ,
+	[ISSCODE] [CHAR] (12) NULL,
+	[ICOD] [char] (10) NULL ,
+	[SCOD] [char] (3) NULL ,
+	[OP_QTY] [decimal](18, 3) NULL ,
+	[ISS_DATE] [datetime] NULL ,
+	[RATE] [DECIMAL] (18,3) NULL,
+	[PTY_CODE] [varchar] (6) NULL ,
+	[BINCD] [varchar] (25) NULL ,
+	[ISS_QTY] [decimal](18, 3) NULL ,
+	[BALQTY] [decimal](18, 3) NULL ,
+	[HOST]	[VARCHAR] (25) NOT NULL DEFAULT HOST_NAME(),
+	[DVCD] [CHAR] (6),
+	[VTYP] [CHAR] (3),
+	[RMRK] [VARCHAR] (50)
+) ON [PRIMARY]

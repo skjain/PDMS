@@ -1,0 +1,16 @@
+CREATE TABLE [dbo].[GRDMST] (
+	[CODE] [numeric](18, 0) NOT NULL ,
+	[GRAD] [char] (50) NULL ,
+	[SEQC] [numeric](18, 5) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[GRDMST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_GRDMST] PRIMARY KEY  CLUSTERED 
+	(
+		[CODE]
+	)  ON [PRIMARY] 

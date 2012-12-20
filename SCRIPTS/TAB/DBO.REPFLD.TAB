@@ -1,0 +1,10 @@
+CREATE TABLE [dbo].[REPFLD] (
+	[RPCD] [char] (3) NULL ,
+	[POSN] [decimal](18, 0) NULL ,
+	[FLDN] [varchar] (50) NULL ,
+	[DESC] [varchar] (50) NULL ,
+	[LNTH] [decimal](18, 4) NULL ,
+	[TYPE] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+

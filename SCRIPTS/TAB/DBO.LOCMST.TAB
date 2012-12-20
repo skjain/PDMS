@@ -1,0 +1,4 @@
+CREATE TABLE [dbo].[LOCMST] (
+	[CODE] [char] (6) NULL ,
+	[NAME] [char] (25) NULL 
+) ON [PRIMARY]

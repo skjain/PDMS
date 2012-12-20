@@ -1,0 +1,14 @@
+CREATE TABLE [dbo].[NARRMAST] (
+	[CODE] [char] (10) NULL ,
+	[KCOD] [smallint] NOT NULL ,
+	[SHIFT] [smallint] NOT NULL ,
+	[NARR] [varchar] (250) NULL ,
+	[MODUL] [varchar] (25) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+

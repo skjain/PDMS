@@ -1,0 +1,76 @@
+CREATE TABLE [dbo].[JOBOUT] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[VTYP] [char] (3) NOT NULL ,
+	[DBCD] [char] (6) NOT NULL ,
+	[VBNO] [char] (10) NOT NULL ,
+	[SRCH] [smallint] NOT NULL ,
+	[DATE] [datetime] NOT NULL ,
+	[PCOD] [char] (6) NOT NULL ,
+	[CCCD] [char] (6) NULL ,
+	[CHEAD] [char] (6) NULL ,
+	[DPCD] [char] (3) NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[IDNO] [char] (50) NULL ,
+	[PCES] [decimal](18, 0) NOT NULL ,
+	[QNTY] [decimal](18, 3) NOT NULL ,
+	[RATE] [decimal](18, 5) NOT NULL ,
+	[AMNT] [decimal](18, 5) NOT NULL ,
+	[OPER] [char] (1) NULL ,
+	[LTNO] [char] (10) NULL ,
+	[GRNNO] [char] (100) NULL ,
+	[RECNO] [char] (10) NULL ,
+	[XDAYS] [decimal](18, 0) NOT NULL ,
+	[CHLN] [char] (10) NULL ,
+	[CHDT] [datetime] NULL ,
+	[BILNO] [char] (10) NULL ,
+	[BILDT] [datetime] NULL ,
+	[LRNO] [char] (20) NULL ,
+	[LRDT] [datetime] NULL ,
+	[VHCLNO] [char] (20) NULL ,
+	[TRCD] [char] (6) NULL ,
+	[RMRK] [char] (250) NULL ,
+	[CLRSTATUS] [char] (1) NULL ,
+	[MODE] [char] (1) NULL ,
+	[USER] [char] (10) NOT NULL ,
+	[SYSR] [char] (10) NULL ,
+	[WONO] [char] (12) NULL ,
+	[WODT] [datetime] NULL ,
+	[SCHRG] [decimal](18, 0) NOT NULL ,
+	[RECSTAT] [char] (10) NULL ,
+	[REC_QNTY] [decimal](18, 3) NOT NULL ,
+	[BAL_QNTY] [decimal](18, 3) NOT NULL ,
+	[MAXQTY] [decimal](18, 3) NOT NULL ,
+	[COPS] [decimal](9, 0) NOT NULL ,
+	[MRGN] [char] (20) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[JOBOUT] WITH NOCHECK ADD 
+	CONSTRAINT [PK_JOBOUT] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[VTYP],
+		[DBCD],
+		[VBNO],
+		[SRCH]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[JOBOUT] ADD 
+	CONSTRAINT [DF_JOBOUT_SRCH] DEFAULT (0) FOR [SRCH],
+	CONSTRAINT [DF_JOBOUT_PCES] DEFAULT (0) FOR [PCES],
+	CONSTRAINT [DF_JOBOUT_QNTY] DEFAULT (0) FOR [QNTY],
+	CONSTRAINT [DF_JOBOUT_RATE] DEFAULT (0) FOR [RATE],
+	CONSTRAINT [DF_JOBOUT_AMNT] DEFAULT (0) FOR [AMNT],
+	CONSTRAINT [DF_JOBOUT_XDAYS] DEFAULT (0) FOR [XDAYS],
+	CONSTRAINT [DF_JOBOUT_CLRSTATUS] DEFAULT ('N') FOR [CLRSTATUS],
+	CONSTRAINT [DF_JOBOUT_MODE] DEFAULT ('N') FOR [MODE],
+	CONSTRAINT [DF_JOBOUT_SCHRG] DEFAULT (0) FOR [SCHRG],
+	CONSTRAINT [DF__JOBOUT__REC_QNTY__69292A25] DEFAULT (0) FOR [REC_QNTY],
+	CONSTRAINT [DF__JOBOUT__BAL_QNTY__6A1D4E5E] DEFAULT (0) FOR [BAL_QNTY],
+	CONSTRAINT [DF__JOBOUT__MAXQTY__6B117297] DEFAULT (0) FOR [MAXQTY],
+	CONSTRAINT [DF__JOBOUT__COPS__566BF0CA] DEFAULT (0) FOR [COPS]
+
+

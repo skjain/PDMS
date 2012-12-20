@@ -1,0 +1,25 @@
+CREATE TABLE [dbo].[REQ_TRN] (
+	[COMP] [char] (4) NOT NULL ,
+	[C_REQIDX] [char] (12) NOT NULL ,
+	[SRCH] [int] NULL ,
+	[V_REQCODE] [varchar] (9) NOT NULL ,
+	[V_ICOD] [char] (10) NOT NULL ,
+	[A_REQQTY] [decimal](18, 3) NOT NULL ,
+	[A_RECQTY] [decimal](18, 3) NULL CONSTRAINT [DF_REQ_TRN_N_RECQTY] DEFAULT (0),
+	[V_REMARKS] [varchar] (100) NULL ,
+	[LSDT] [DATETIME] NULL,
+	[DVCD] [CHAR] (6),
+	[DEPT] [CHAR] (3),
+	CONSTRAINT [PK_REQ_TRN] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[V_REQCODE],
+		[V_ICOD]
+	)  ON [PRIMARY] ,
+	CONSTRAINT [FK_ReqTrans_ICode_ItemMst_code] FOREIGN KEY 
+	(
+		[V_ICOD]
+	) REFERENCES [dbo].[ITMMST] (
+		[CODE]
+	)
+) ON [PRIMARY]

@@ -1,0 +1,4 @@
+Line 24: Class MSComctlLib.ImageList of control ImageList1 was not a loaded control class.
+Line 50: Class MSComctlLib.ListView of control lstUnit was not a loaded control class.
+Line 96: Class OsenXPCntrl.OsenXPButton of control cmdOk was not a loaded control class.
+Line 134: Class OsenXPCntrl.OsenXPButton of control cmdCancel was not a loaded control class.

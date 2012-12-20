@@ -1,0 +1,9 @@
+CREATE TABLE [dbo].[ERRORLOG] (
+	[ERRORCODE] [varchar] (15) NULL ,
+	[ERRORDESC] [ntext] NULL ,
+	[ERRMODULE] [varchar] (50) NULL ,
+	[ERRDATE] [datetime] NULL ,
+	[ERRINUSER] [varchar] (15) NULL 
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+

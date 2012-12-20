@@ -1,0 +1,5 @@
+CREATE TABLE [dbo].[STOCKJVCONFIG] (
+	[CODE] [char] (6) NULL ,
+	[TORB] [char] (1) NULL ,
+	[MWFT] [char] (1) NULL 
+) ON [PRIMARY]

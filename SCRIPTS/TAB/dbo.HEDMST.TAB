@@ -1,0 +1,32 @@
+CREATE TABLE [dbo].[HEDMST] (
+	[HCOD] [char] (6) NOT NULL ,
+	[NAME] [varchar] (50) NOT NULL ,
+	[DRCR] [char] (1) NOT NULL ,
+	[SCH6] [char] (1) NOT NULL ,
+	[rcod] [char] (6) NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL ,
+	[SCH_GRP] [char] (50) NULL ,
+	[SCH_NOS] [char] (10) NULL ,
+	[SCH_SEQ] [numeric](18, 3) NOT NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[HEDMST] WITH NOCHECK ADD 
+	CONSTRAINT [PK_HEDMST] PRIMARY KEY  CLUSTERED 
+	(
+		[HCOD]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[HEDMST] ADD 
+	CONSTRAINT [DF__HEDMST__SCH_SEQ__35FCF52C] DEFAULT (0) FOR [SCH_SEQ],
+	CONSTRAINT [UK_HEDMST_NAME] UNIQUE  NONCLUSTERED 
+	(
+		[NAME]
+	)  ON [PRIMARY] 
+
+

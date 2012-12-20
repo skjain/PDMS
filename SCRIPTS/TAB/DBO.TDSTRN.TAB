@@ -1,0 +1,62 @@
+CREATE TABLE [dbo].[TDSTRN] (
+	[COMP] [char] (4) NOT NULL ,
+	[VTYP] [char] (3) NOT NULL ,
+	[SRNO] [char] (13) NOT NULL ,
+	[SRCH] [int] NOT NULL ,
+	[DBCD] [char] (6) NOT NULL ,
+	[VNO] [char] (10) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[PCOD] [char] (6) NOT NULL ,
+	[DATE] [datetime] NOT NULL ,
+	[VBNO] [char] (10) NOT NULL ,
+	[BNET] [decimal](18, 2) NOT NULL ,
+	[TDAC] [char] (6) NOT NULL ,
+	[TDCT] [char] (6) NOT NULL ,
+	[TDAM] [decimal](18, 2) NOT NULL ,
+	[TDSP] [decimal](18, 2) NOT NULL ,
+	[TDSA] [decimal](18, 2) NOT NULL ,
+	[SCPR] [decimal](18, 2) NOT NULL ,
+	[SCAM] [decimal](18, 2) NOT NULL ,
+	[ECSP] [decimal](18, 2) NOT NULL ,
+	[ECSA] [decimal](18, 2) NOT NULL ,
+	[TDSCERNO] [char] (10) NULL ,
+	[TDSCERDT] [datetime] NULL ,
+	[rowguid]  uniqueidentifier ROWGUIDCOL  NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL ,
+	[BANKNAME] [varchar] (50) NULL ,
+	[BSRCODE] [varchar] (50) NULL ,
+	[CHLNDT] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[TDSTRN] WITH NOCHECK ADD 
+	CONSTRAINT [PK_TDSTRN] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[VTYP],
+		[DBCD],
+		[VNO],
+		[UNIT]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[TDSTRN] ADD 
+	CONSTRAINT [DF_TDSTRN_BNET] DEFAULT (0) FOR [BNET],
+	CONSTRAINT [DF_TDSTRN_TDAM] DEFAULT (0) FOR [TDAM],
+	CONSTRAINT [DF_TDSTRN_TDSP] DEFAULT (0) FOR [TDSP],
+	CONSTRAINT [DF_TDSTRN_TDSA] DEFAULT (0) FOR [TDSA],
+	CONSTRAINT [DF_TDSTRN_SCPR] DEFAULT (0) FOR [SCPR],
+	CONSTRAINT [DF_TDSTRN_SCAM] DEFAULT (0) FOR [SCAM],
+	CONSTRAINT [DF_TDSTRN_ECSP] DEFAULT (0) FOR [ECSP],
+	CONSTRAINT [DF_TDSTRN_ECSA] DEFAULT (0) FOR [ECSA],
+	CONSTRAINT [DF__TDSTRN__rowguid__2101D846] DEFAULT (newid()) FOR [rowguid]
+
+
+ CREATE  UNIQUE  INDEX [index_308196148] ON [dbo].[TDSTRN]([rowguid]) ON [PRIMARY]
+
+

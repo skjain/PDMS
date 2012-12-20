@@ -1,0 +1,9 @@
+Create Table FormulaTrn
+(
+ Code Char(6),
+ Name Varchar(50),
+ ICOD char(10),
+ [DESC] VARCHAR (250),
+ CQTY decimal(18,3),
+ UOM  CHAR(5)
+)

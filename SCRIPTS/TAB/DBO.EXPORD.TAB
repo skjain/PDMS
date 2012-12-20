@@ -1,0 +1,44 @@
+CREATE TABLE [dbo].[EXPORD] (
+	[COMP] [char] (4) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[DBCD] [char] (6) NOT NULL ,
+	[ORDN] [char] (10) NOT NULL ,
+	[EXPORTREFNO] [char] (50) NULL ,
+	[CNTRYOFORGIN] [char] (50) NULL ,
+	[CNTRYOFFINALDES] [char] (50) NULL ,
+	[TRMSOFDLRY] [char] (50) NULL ,
+	[PRECARIGBY] [char] (50) NULL ,
+	[PLACEOFRCPT] [char] (50) NULL ,
+	[VSLFLTNO] [char] (50) NULL ,
+	[PORTOFLOAD] [char] (50) NULL ,
+	[PORTOFDISCHARG] [char] (50) NULL ,
+	[FINALDEST] [char] (50) NULL ,
+	[REMARK1] [char] (250) NULL ,
+	[REMARK2] [char] (250) NULL ,
+	[REMARK3] [char] (250) NULL ,
+	[MARKNO] [char] (50) NULL ,
+	[PKGTYPE] [char] (6) NULL ,
+	[PKGDESC] [char] (50) NULL ,
+	[MODETERMSOFPYMT] [char] (50) NULL ,
+	[BANKCODE] [char] (6) NULL ,
+	[PAYMENTBYIRRLC] [char] (50) NULL ,
+	[CIFFOB] [varchar] (50) NULL ,
+	[TRMSOFPYMT] [char] (50) NULL ,
+	[EXRAT] [decimal](18, 3) NOT NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[EXPORD] WITH NOCHECK ADD 
+	CONSTRAINT [PK_EXPORT] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[UNIT],
+		[DBCD],
+		[ORDN]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[EXPORD] ADD 
+	CONSTRAINT [DF__EXPORD__EXRAT__11558062] DEFAULT (1) FOR [EXRAT]
+
+

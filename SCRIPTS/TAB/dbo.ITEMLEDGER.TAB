@@ -1,0 +1,12 @@
+CREATE TABLE [dbo].[ITEMLEDGER] (
+	[COMP] [char] (4) NULL ,
+	[CODE] [char] (12) NULL ,
+	[DAT] [datetime] NULL ,
+	[PCOD] [char] (6) NULL ,
+	[ICOD] [char] (10) NULL ,
+	[VTYP] [char] (3) NULL ,
+	[USR] [varchar] (25) NULL ,
+	[OPER] [char] (1) NULL ,
+	[QTY] [decimal](18, 3) NULL ,
+	[IMOD] [smallint] NULL 
+) ON [PRIMARY]

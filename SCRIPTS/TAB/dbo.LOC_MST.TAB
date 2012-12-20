@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[LOC_MST] (
+	[CODE] [char] (2) NOT NULL ,
+	[NAME] [varchar] (40) NOT NULL ,
+	CONSTRAINT [PK_LocationMaster] PRIMARY KEY  CLUSTERED 
+	(
+		[CODE]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

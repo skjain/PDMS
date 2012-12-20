@@ -1,0 +1,30 @@
+CREATE TABLE [dbo].[JOBTRN] (
+	[COMP] [char] (4) NOT NULL ,
+	[JOBID] [char] (12) NOT NULL ,
+	[SRCH] [smallint] NOT NULL CONSTRAINT [DF_JOBTRN_SRCH] DEFAULT (1),
+	[CHLNNO] [varchar] (10) NULL ,
+	[DBCD] [char] (6) NOT NULL ,
+	[VCOD] [char] (6) NULL ,
+	[VTYP] [char] (3) NOT NULL ,
+	[DCOD] [char] (3) NOT NULL ,
+	[JOBDATE] [datetime] NOT NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[QNTY] [decimal](18, 3) NOT NULL CONSTRAINT [DF_JOBTRN_QNTY] DEFAULT (0),
+	[RATE] [decimal](18, 3) NULL CONSTRAINT [DF_JOBTRN_RATE] DEFAULT (0),
+	[RCMP] [char] (4) NULL ,
+	[RJOBID] [char] (12) NULL ,
+	[RTYP] [char] (3) NULL ,
+	[RQTY] [decimal](18, 3) NULL CONSTRAINT [DF_JOBTRN_RQTY] DEFAULT (0),
+	[DVCD] [char] (6) NULL ,
+	[GPNO] [char] (12) NULL ,
+	[SCOD] [char] (3) NULL ,
+	[REJQ] [DECIMAL] (18,3) NOT NULL CONSTRAINT [DF_JOBTRN_REJQ] DEFAULT (0),
+	[AQTY] [DECIMAL] (18,3) NOT NULL CONSTRAINT [DF_JOBTRN_AQTY] DEFAULT (0),
+	CONSTRAINT [PK_JOBTRN] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[JOBID],
+		[VTYP],
+		[ICOD]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]

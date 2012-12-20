@@ -1,0 +1,51 @@
+CREATE TABLE [dbo].[EMBLOT] (
+	[COMP] [char] (4) NOT NULL ,
+	[VTYP] [char] (3) NOT NULL ,
+	[SRNO] [char] (13) NOT NULL ,
+	[SRCH] [int] NOT NULL ,
+	[DVCD] [char] (6) NOT NULL ,
+	[UNIT] [char] (6) NOT NULL ,
+	[PCOD] [char] (6) NOT NULL ,
+	[LTNO] [char] (10) NOT NULL ,
+	[ICOD] [char] (10) NOT NULL ,
+	[DATE] [datetime] NOT NULL ,
+	[PCLN] [char] (10) NULL ,
+	[CHDT] [datetime] NULL ,
+	[DSNO] [char] (10) NULL ,
+	[IPCS] [decimal](18, 3) NOT NULL ,
+	[JPCS] [decimal](18, 3) NOT NULL ,
+	[PPCS] [decimal](18, 3) NOT NULL ,
+	[WDPC] [decimal](18, 3) NOT NULL ,
+	[SPCS] [decimal](18, 3) NOT NULL ,
+	[OPCS] [decimal](18, 3) NOT NULL ,
+	[BLPCS] [decimal](18, 3) NOT NULL ,
+	[RECSTAT] [char] (1) NOT NULL ,
+	[EXTRA1] [varchar] (50) NULL ,
+	[EXTRA2] [varchar] (50) NULL ,
+	[EXTRA3] [varchar] (50) NULL ,
+	[EXTRA4] [varchar] (50) NULL ,
+	[EXTRA5] [varchar] (50) NULL 
+) ON [PRIMARY]
+
+
+ALTER TABLE [dbo].[EMBLOT] WITH NOCHECK ADD 
+	CONSTRAINT [PK_EMBLOT] PRIMARY KEY  CLUSTERED 
+	(
+		[COMP],
+		[VTYP],
+		[SRNO],
+		[SRCH]
+	)  ON [PRIMARY] 
+
+
+ALTER TABLE [dbo].[EMBLOT] WITH NOCHECK ADD 
+	CONSTRAINT [DF_EMBLOT_IPCS] DEFAULT (0) FOR [IPCS],
+	CONSTRAINT [DF_EMBLOT_JPCS] DEFAULT (0) FOR [JPCS],
+	CONSTRAINT [DF_EMBLOT_PPCS] DEFAULT (0) FOR [PPCS],
+	CONSTRAINT [DF_EMBLOT_WDPC] DEFAULT (0) FOR [WDPC],
+	CONSTRAINT [DF_EMBLOT_SPCS] DEFAULT (0) FOR [SPCS],
+	CONSTRAINT [DF_EMBLOT_OPCS] DEFAULT (0) FOR [OPCS],
+	CONSTRAINT [DF_EMBLOT_BLPCS] DEFAULT (0) FOR [BLPCS],
+	CONSTRAINT [DF_EMBLOT_RECSTAT] DEFAULT ('N') FOR [RECSTAT]
+
+
